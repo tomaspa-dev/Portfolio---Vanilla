@@ -29,6 +29,10 @@ Large: 1.8
 #fae5d3
 #eb984e
 
+#161616
+#1A1A1A
+rgba(37, 37, 37, 1);
+
 - Shades: 
 #cf711f
 #45260a
@@ -75,5 +79,41 @@ body {
   font-family: "Poppins", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #666;
+  color: #fff;
+  background-color: #161616;
+}
+
+.container {
+  width: 120rem;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3.2rem;
+  padding-top: 1rem;
+}
+
+/* .main-nav-header {
+  display: flex;
+} */
+
+.main-nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.slider {
+  position: relative;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  margin-bottom: 3.6rem;
 }
