@@ -168,9 +168,12 @@ strong {
   line-height: 1.6;
 }
 
-.hero-description,
-.hero-info {
+.hero-description {
   color: #888;
+}
+
+.hero-info {
+  color: #9b51e0;
 }
 
 .header {
@@ -187,8 +190,8 @@ strong {
   width: 30px;
   border: 2px solid white;
   position: absolute;
-  left: 50%;
-  bottom: -50px;
+  left: 48.5%;
+  bottom: -60px;
   border-radius: 50px;
 }
 
@@ -234,7 +237,7 @@ strong {
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 2.4rem;
   text-align: center;
 }
 
@@ -254,10 +257,6 @@ strong {
   text-align: center;
 }
 
-/* .main-nav-header {
-  display: flex;
-} */
-
 .main-nav-list {
   list-style: none;
   display: flex;
@@ -265,6 +264,11 @@ strong {
   gap: 3.2rem;
 }
 
+/* Carousel */
+
+.carousel-section {
+  padding: 12rem 0;
+}
 .slider {
   position: relative;
   width: 90%;
@@ -274,6 +278,73 @@ strong {
   place-items: center;
   overflow: hidden;
   margin-bottom: 3.6rem;
+}
+
+.slider-projects {
+  display: flex;
+  width: calc(35rem * 6);
+  width: calc(55rem * 6);
+  animation: scroll 15s linear infinite;
+}
+
+.slider-projects:hover {
+  animation-play-state: paused;
+}
+
+.slider-img {
+  width: 35rem;
+  width: 55rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem;
+  perspective: 10rem;
+}
+
+.project-img img {
+  /* display: block; */
+  width: 100%;
+  max-width: 100%;
+  border-radius: 5px;
+  /* object-fit: cover; */
+}
+
+.slider::before,
+.slider::after {
+  background: linear-gradient(
+    to right,
+    rgba(22, 22, 22, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-35rem * 3));
+    transform: translateX(calc(-55rem * 3));
+  }
 }
 
 /* 
