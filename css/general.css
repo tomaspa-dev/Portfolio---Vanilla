@@ -372,6 +372,10 @@ strong {
   /* object-fit: cover; */
 }
 
+.description {
+  text-align: center;
+}
+
 .slider::before,
 .slider::after {
   background: linear-gradient(
@@ -405,6 +409,35 @@ strong {
   100% {
     transform: translateX(calc(-76.4rem * 3));
   }
+}
+
+/* Featured */
+
+.project-tags {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  background-color: #e1cbf6;
+  padding: 0.8rem 1.2rem;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.tech-tag {
+  background-color: rgba(255, 255, 255, 0);
+  border: 0.0325rem solid rgba(255, 255, 255, 1);
+  color: #b3b3b3;
+}
+
+.btn--full {
+}
+
+.btn--outline {
 }
 
 /* 
