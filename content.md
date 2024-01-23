@@ -20,7 +20,7 @@ info text - See my projects
 
 ## Carrousel
 
-Project1
+Landing Page - Ice Cream Shop
 Project2
 Project3
 Project4
