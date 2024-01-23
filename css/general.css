@@ -232,6 +232,19 @@ strong {
   color: #b3b3b3;
 }
 
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 0.8rem 1.6rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #9b51e0;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #7c41b3;
+}
+
 /** HERO SECTION **/
 .scroll-down {
   height: 50px;
@@ -324,6 +337,7 @@ strong {
 .slider-projects {
   display: flex;
   width: calc(45rem * 6);
+  width: calc(76.4rem * 6);
   animation: scroll 15s linear infinite;
 }
 
@@ -332,7 +346,7 @@ strong {
 }
 
 .slider-img {
-  width: 45rem;
+  width: 76.4rem;
   /* height: auto; */
   display: flex;
   flex-direction: column;
@@ -343,10 +357,18 @@ strong {
 }
 
 .project-img img {
-  /* display: block; */
-  max-width: 100%;
-  max-height: 100%;
+  /* max-width: 100%;
+  min-height: 35rem;  */
+  display: block;
+  width: 100%;
+  /* width: auto; */
+  height: calc(min(350px, 100%));
+  image-rendering: auto;
+  object-fit: cover;
+  object-position: center center;
   border-radius: 5px;
+  /* sizes: calc(min(500px, 100%))-10px; */
+  /* height: calc(min(500px, 100%)); */
   /* object-fit: cover; */
 }
 
@@ -381,7 +403,7 @@ strong {
   }
 
   100% {
-    transform: translateX(calc(-45rem * 3));
+    transform: translateX(calc(-76.4rem * 3));
   }
 }
 
