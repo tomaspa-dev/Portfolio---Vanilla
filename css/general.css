@@ -23,7 +23,7 @@ Large: 1.8
 
 --- 02 COLORS
 
-- Primary: #e67e22
+- Primary: #9b51e0
 - Tints:
 #fdf2e9
 #fae5d3
@@ -169,6 +169,60 @@ strong {
   color: #9b51e0;
 }
 
+.featured-tittle {
+  font-size: 6.2rem;
+  line-height: 1.6;
+}
+
+.featured-secondary {
+  font-size: 3rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.featured-description {
+  font-size: 2.4rem;
+  line-height: 1.6;
+  color: #888;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 0.8rem 1.6rem;
+  margin-right: 1.2rem;
+  border-radius: 9px;
+  transition: all 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #9b51e0;
+  color: #ccc;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #6d399d;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #161616;
+  color: #999;
+  transition: all 0.3s;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #2d2d2d;
+  color: #888;
+}
+
 /** HEADER **/
 
 .header {
@@ -242,7 +296,7 @@ strong {
 
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
-  background-color: #7c41b3;
+  background-color: #6d399d;
 }
 
 /** HERO SECTION **/
@@ -341,8 +395,21 @@ strong {
   animation: scroll 15s linear infinite;
 }
 
-.slider-projects:hover {
+/* .slider-projects:hover {
   animation-play-state: paused;
+} */
+
+.featured-text {
+  position: relative;
+}
+
+.featured-number::before {
+  content: "01";
+  position: absolute;
+  font-size: 4.2rem;
+  color: #b3b3b3;
+  left: -10%;
+  top: -10%;
 }
 
 .slider-img {
@@ -381,7 +448,7 @@ strong {
   background: linear-gradient(
     to right,
     rgba(22, 22, 22, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(255, 255, 255, 0) 30%
   );
   content: "";
   height: 100%;
