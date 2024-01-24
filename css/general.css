@@ -403,13 +403,18 @@ strong {
   position: relative;
 }
 
-.featured-number::before {
+.featured-number-one::before,
+.featured-number-two::before {
   content: "01";
   position: absolute;
   font-size: 4.2rem;
   color: #b3b3b3;
   left: -10%;
   top: -10%;
+}
+
+.featured-number-two::before {
+  content: "02";
 }
 
 .slider-img {
