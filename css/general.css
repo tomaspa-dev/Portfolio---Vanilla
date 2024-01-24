@@ -484,6 +484,9 @@ strong {
 }
 
 /* FEATURED SECTION */
+.footer-section {
+  padding: 12rem 0 0 0;
+}
 
 .project-tags {
   display: flex;
@@ -513,10 +516,6 @@ strong {
 }
 
 /* FOOTER SECTION */
-
-.footer-section {
-}
-
 .footer {
   display: flex;
   flex-direction: column;
