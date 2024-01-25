@@ -483,6 +483,27 @@ strong {
   }
 }
 
+/* ABOUT ME */
+
+/* CONTACT ME */
+
+.bento-li {
+  list-style: none;
+}
+
+.bento-li-items {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #9b51e0;
+}
+
 /* FEATURED SECTION */
 .footer-section {
   padding: 12rem 0 0 0;
