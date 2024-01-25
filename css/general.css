@@ -520,16 +520,16 @@ strong {
   display: grid;
   grid-template-columns: 1fr 1fr;
   /* gird-template-rows: 1fr 1fr; */
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 4rem;
+  grid-row-gap: 4rem;
 }
 
 .main-grid-four {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-column-gap: 1rem;
-  grid-row-gap: 1rem;
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
 }
 
 .bento-box {
@@ -561,8 +561,16 @@ strong {
   font-size: 4.4rem;
 }
 
+.gray-text {
+  color: #9ba1a6;
+}
+
 .sub-text {
   color: #888;
+}
+
+.years {
+  font-size: 1.8rem;
 }
 
 /* FOOTER SECTION */
