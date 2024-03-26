@@ -17,13 +17,15 @@
 </head>
 
 <body>
-    <header class="header">
-        <a href="#"><img class="logo" src="" alt="Tomaspa developer logo"></a>
+    <header class="header padding--small">
+        <a class="logo-link" href="#">
+            <p class="logo">tomaspa</p>
+        </a>
         <nav class="main-nav-header">
             <ul class="main-nav-list">
-                <li><a class="main-nav-link" href="#">Projects</a></li>
-                <li><a class="main-nav-link" href="#">Services</a></li>
-                <li><a class="main-nav-link" href="#">About</a></li>
+                <li><a class="main-nav-link" href="#projects">Projects</a></li>
+                <li><a class="main-nav-link" href="https://webdesign-pixellab.com/" target="_blank">Services</a></li>
+                <li><a class="main-nav-link" href="#about">About</a></li>
                 <li><a class="main-nav-link nav-cta" href="mailto:blord.dev@gmail.com">Contact me</a></li>
             </ul>
         </nav>
@@ -119,17 +121,17 @@
         </div>
     </section>
 
-    <section class="featured-section">
+    <section class="featured-section margin-bottom--large" id="projects">
         <div class="container">
             <div class="featured-project margin-bottom-md">
                 <h2 class="heading-secondary">Featured Projects</h2>
-                <div class="featured-text margin-bottom-md">
+                <div class="featured-text margin-bottom--large">
                     <p class="primary-text featured-tittle featured-number-one">Omicron Endless War</p>
                     <p class="primary-text featured-secondary">Video Game Developer</p>
                     <p class="description-text featured-description margin-bottom-sm">A Unity 3D Videogame made with the
                         C# programming language, randomly generated levels, characters modeled and animated in 3D with
                         blender. The Video Game has
-                        a system of levels, life, missions, menu, score, sound, rewards when reaching 100 points.
+                        a system of levels, life, missions, menu, score, sound, and rewards when reaching 100 points.
                     </p>
                     <div class="project-tags margin-bottom-sm">
                         <span class="tag">Unity</span>
@@ -137,7 +139,7 @@
                         <span class="tag">Development</span>
 
                     </div>
-                    <div class="tech-tags margin-bottom-md">
+                    <div class="tech-tags margin-bottom-sm">
                         <span class="tag tech-tag">C#</span>
                         <span class="tag tech-tag">Android</span>
                     </div>
@@ -170,7 +172,7 @@
                         <span class="tag">Development</span>
 
                     </div>
-                    <div class="tech-tags margin-bottom-md">
+                    <div class="tech-tags margin-bottom-sm">
                         <span class="tag tech-tag">CSS</span>
                         <span class="tag tech-tag">JS</span>
                     </div>
@@ -185,41 +187,10 @@
                 </div>
             </div>
 
-            <!-- <div class="featured-cads">
-                <div class="card">
-                    <img class="card-img" src="/img/" alt="card of project">
-                    <div class="card-description">
-                        <div class="tech-tags">
-                            <span class="tag">Landing Page</span>
-                            <span class="tag">Design</span>
-                            <span class="tag">Development</span>
-                        </div>
-                        <p class="primary-text">Project Name</p>
-                        <div><a class="btn btn--full" href="#">Case study</a>
-                            <a class="btn btn--outline" href="#">Website</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img class="card-img" src="/img/" alt="card of project">
-                    <div class="card-description">
-                        <div class="tech-tags">
-                            <span class="tag">Tag1</span>
-                            <span class="tag">Tag2</span>
-                            <span class="tag">Tag3</span>
-                        </div>
-                        <p class="primary-text">Project Name</p>
-                        <div><a class="btn btn--full" href="#">Case study</a>
-                            <a class="btn btn--outline" href="#">Website</a>
-                        </div>
-                    </div>
-                </div> -->
-
         </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-section padding--medium" id="about">
         <div class="container">
             <h2 class="heading-secondary">About me</h2>
             <div class="bento-grid">
@@ -237,12 +208,11 @@
                         <p class="primary-text big-text">Resume</p>
 
                         <a class="btn btn--full" target="_blank"
-                            href="https://drive.google.com/file/d/1VsBaISCGS5D6xgLN4f7XjRUpbedgtBG1/view?usp=drive_link">download
-                            resume</a>
+                            href="https://drive.google.com/file/d/1VsBaISCGS5D6xgLN4f7XjRUpbedgtBG1/view?usp=drive_link">download</a>
                     </div>
 
-                    <div class="one-column">
-                        <div class="bento-box card-main--small">
+                    <div class="one--column">
+                        <div class="bento-box card-main--small animated-box">
                             <p class="primary-text big-text">20+</p>
                             <p class="description-text sub-text">Completed Projects</p>
                         </div>
@@ -284,17 +254,17 @@
             </div>
     </section>
 
-    <section class="social-proof-section">
+    <section class="social-proof-section" id="contact">
         <div class="container margin-bottom-md">
             <h2 class="heading-secondary">Contact me</h2>
             <div class="bento-grid">
                 <div class="main-grid-four">
                     <div class="bento-box card-main--small">
                         <p class="primary-text big-text">20+</p>
-                        <p class="description-text sub-text">Completed Projects</p>
+                        <p class="description-text sub-text center-text">Completed Projects</p>
                     </div>
                     <div class="bento-box card-main--small">
-                        <p class="primary-text big-text">Web Developer</p>
+                        <p class="primary-text big-text-dev">Web Developer</p>
                     </div>
                     <div class="bento-box card-main--small">
                         <p class="primary-text big-text">10+</p>
@@ -302,7 +272,7 @@
                     </div>
                     <div class="bento-box card-main--small">
                         <p class="primary-text big-text">2<span class="years">Years</span></p>
-                        <p class="description-text sub-text">Freelance Experience</p>
+                        <p class="description-text sub-text">Freelance Exp.</p>
                     </div>
                 </div>
                 <div class="bento-box">
@@ -313,7 +283,7 @@
                         can
                         contribute to the success of your online presence! What I Can Do for You:</p>
 
-                    <ul class="bento-li gray-text description-text ">
+                    <ul class="bento-li gray-text description-text padding--small">
                         <li class="bento-li-items"><ion-icon class="list-icon"
                                 name="checkmark-outline"></ion-icon>Design and Development of Engaging Websites</li>
                         <li class="bento-li-items"><ion-icon class="list-icon"
@@ -338,10 +308,10 @@
     <section class="footer-section">
         <div class="container footer margin-bottom-md">
             <div class="Work-col">
-                <a class="footer-link" href="#">Projects</a>
-                <a class="footer-link" href="#">Services</a>
+                <a class="footer-link" href="#projects">Projects</a>
+                <a class="footer-link" href="https://webdesign-pixellab.com/" target="_blank">Services</a>
                 <a class="footer-link" href="#">Faq</a>
-                <a class="footer-link" href="#">About</a>
+                <a class="footer-link" href="#about">About</a>
             </div>
 
             <div class="social-links-col">
