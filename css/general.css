@@ -579,12 +579,6 @@ strong {
   color: #b3b3b3;
 }
 
-.btn--full {
-}
-
-.btn--outline {
-}
-
 /* SOCIAL-PROOF SECTION */
 .bento-grid {
   display: grid;
@@ -740,12 +734,6 @@ strong {
 .Work-col {
   display: flex;
   gap: 3.2rem;
-}
-
-.social-links-col {
-}
-
-.copyright-col {
 }
 
 .footer-link:link,
