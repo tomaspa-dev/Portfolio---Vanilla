@@ -763,9 +763,8 @@ strong {
 }
 
 .social-link:link,
-.tech-link:link,
-.social-link:visited,
-.tech-link:visited
+.tech-link,
+.social-link:visited
 {
   display: inline-block;
   text-decoration: none;
