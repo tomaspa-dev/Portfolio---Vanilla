@@ -100,8 +100,12 @@ body {
   margin-bottom: 4rem !important;
 }
 
-.margin-bottom--large {
+.margin-bottom-large {
   margin-bottom: 12rem !important;
+}
+
+.margin-bottom-xlarge {
+  margin-bottom: 24rem !important;
 }
 
 .padding--small {
@@ -212,6 +216,26 @@ strong {
   font-size: 2.4rem;
   line-height: 1.6;
   color: #888;
+}
+
+.featured-project {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.featured-img-box {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.featured-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1.5rem 0;
 }
 
 .btn,
@@ -449,6 +473,55 @@ strong {
   animation-play-state: paused;
 } */
 
+.slider-box {
+  overflow: hidden;
+  /* white-space: nowrap; */
+  position: relative;
+  height: calc(6rem * 15);
+}
+
+.slider-box::before,
+.slider-box::after {
+  position: absolute;
+  width: 550px;
+  height: 60px;
+  content: "";
+  z-index: 2;
+}
+
+.slider-box::before {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 22, 22, 1) 0%,
+    rgba(255, 255, 255, 0) 30%
+  );
+}
+
+.slider-box::after {
+  bottom: 0%;
+  left: 0%;
+  background: linear-gradient(
+    to top,
+    rgba(22, 22, 22, 1) 0%,
+    rgba(255, 255, 255, 0) 30%
+  );
+}
+
+.card {
+  display: inline-block;
+  animation: 60s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(0)
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
 .featured-text {
   position: relative;
 }
@@ -459,8 +532,8 @@ strong {
   position: absolute;
   font-size: 4.2rem;
   color: #b3b3b3;
-  left: -6%;
-  top: 4%;
+  left: -10%;
+  top: 2%;
 }
 
 .featured-number-two::before {
@@ -485,6 +558,7 @@ strong {
   width: 100%;
   /* width: auto; */
   height: calc(min(350px, 100%));
+  height: 35rem;
   image-rendering: auto;
   object-fit: cover;
   object-position: center center;
@@ -780,6 +854,71 @@ strong {
 .social-icon, .tech-icon {
   height: 3.6rem;
   width: 3.6rem;
+}
+
+.tech-link {
+  position: relative;
+}
+
+/* Tooltip estilo */
+.tech-link::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8); 
+  opacity: 0;
+  visibility: hidden;
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* Tooltip aparece al pasar el cursor */
+.tech-link:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Estilos específicos para diferentes tooltips */
+.tech-link[data-tooltip="HTML"]::before {
+  border-color: #ef652a;
+  color: #ef652a;
+}
+
+.tech-link[data-tooltip="CSS"]::before {
+  border-color: #2965f1;
+  color: #2965f1;
+}
+
+.tech-link[data-tooltip="JavaScript"]::before {
+  border-color: #f0db4f; 
+  color: #f0db4f; 
+}
+
+.tech-link[data-tooltip="React"]::before {
+  border-color: #61dafb; 
+  color: #61dafb; 
+}
+
+.tech-link[data-tooltip="Python"]::before {
+  border-color: #3776ab;
+  color: #3776ab;
+}
+
+.tech-link[data-tooltip="Figma"]::before {
+  border-color: #a95fff; 
+  color: #a95fff; 
+}
+
+.tech-link[data-tooltip="Node.js"]::before {
+  border-color: #68a063;
+  color: #68a063;
 }
 
 
