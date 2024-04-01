@@ -921,6 +921,142 @@ strong {
   color: #68a063;
 }
 
+/* POPUP */
+
+/* Estilos para el botón de abrir el popup */
+.open-popup-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Estilos para el overlay del popup */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3; /* Asegura que esté por encima de la barra lateral */
+  backdrop-filter: blur(5px); /* Fondo con blur */
+}
+
+/* Estilos para el contenido del popup */
+.popup {
+  background-color: #666;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 80%;
+  text-align: center;
+  position: relative;
+  z-index: 4; /* Asegura que esté por encima del fondo con blur */
+}
+
+/* Estilos para el botón de cerrar */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 36px;
+  color: #fff;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  z-index: 5; /* Asegura que esté por encima del contenido del popup */
+}
+
+/* Estilos para el contenido dentro del popup */
+.popup-content {
+  margin-top: 20px;
+}
+
+/* Carousel at Popup */
+.slider {
+  width: 1300px;
+  max-width: 100vw;
+  height: 700px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  width: max-content;
+  transition: 1s;
+}
+
+.list img {
+  width: 1300px;
+  max-width: 100vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.buttons {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons button {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #fff5;
+  color: #fff;
+  border: none;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+
+.dots {
+  position: absolute;
+  bottom: -25px;
+  color: #fff;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content:center;
+}
+
+.dots li {
+  list-style: none;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 20px;
+  transition: 1s;
+}
+
+.dots li.active{
+  width: 30px;
+}
+
+
+/* @media screen and (max-width: 768px ) {
+  .slider {
+    height: 400px
+  }    
+} */
 
 
 /* 
