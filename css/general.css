@@ -923,7 +923,7 @@ strong {
 
 /* POPUP */
 
-/* Estilos para el botón de abrir el popup */
+/* Botón para abrir el popup */
 .open-popup-btn {
   padding: 10px 20px;
   background-color: #007bff;
@@ -933,7 +933,7 @@ strong {
   cursor: pointer;
 }
 
-/* Estilos para el overlay del popup */
+/* Overlay del popup */
 .overlay {
   position: fixed;
   top: 0;
@@ -944,112 +944,125 @@ strong {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 3; /* Asegura que esté por encima de la barra lateral */
-  backdrop-filter: blur(5px); /* Fondo con blur */
+  z-index: 3;
+  backdrop-filter: blur(5px);
 }
 
-/* Estilos para el contenido del popup */
+/* Contenido del popup */
 .popup {
-  background-color: #666;
-  padding: 20px;
+  background-color: rgba(102, 102, 102, 0.7);
+  padding: 15px;
+  padding-bottom: 0;
   border-radius: 8px;
-  max-width: 80%;
+  max-width: 70%;
   text-align: center;
   position: relative;
-  z-index: 4; /* Asegura que esté por encima del fondo con blur */
+  z-index: 4;
 }
 
-/* Estilos para el botón de cerrar */
+/* Botón de cerrar */
 .close-btn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 36px;
+  top: -25px;
+  right: -5px;
+  font-size: 4.8rem;
   color: #fff;
   border: none;
   background: transparent;
   cursor: pointer;
-  z-index: 5; /* Asegura que esté por encima del contenido del popup */
+  z-index: 5;
+  transition: color 0.3s, transform 0.3s;
 }
 
-/* Estilos para el contenido dentro del popup */
-.popup-content {
-  margin-top: 20px;
+.close-btn:hover {
+  color: #ff0000; /* Cambia de color al pasar el mouse */
+  transform: scale(1.2); /* Aumenta de tamaño al pasar el mouse */
 }
 
-/* Carousel at Popup */
-.slider {
-  width: 1300px;
-  max-width: 100vw;
-  height: 700px;
-  margin: auto;
-  position: relative;
+/* Carrusel de imágenes */
+.slider-popup {
+  width: 100%;
+  max-width: 100%; /* Reducido a 400px */
+  height: auto;
   overflow: hidden;
+  position: relative;
+  margin: auto;
+  margin-bottom: 20px;
 }
 
 .list {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
   display: flex;
-  width: max-content;
-  transition: 1s;
+  transition: transform 0.5s ease;
 }
 
-.list img {
-  width: 1300px;
-  max-width: 100vw;
-  height: 100%;
+.item {
+  flex: 0 0 100%;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
 .buttons {
   position: absolute;
-  top: 45%;
-  left: 10%;
-  width: 90%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  z-index: 6;
 }
 
+/* Botónes next y prev del carrusel */
 .buttons button {
-  width: 50px;
-  height: 50px;
+  width: 45px; /* Aumentamos el ancho */
+  height: 45px; /* Aumentamos el alto */
   border-radius: 50%;
-  background-color: #fff5;
+  background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
   border: none;
   font-family: monospace;
+  font-size: 3.0rem;
   font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
+.buttons button:hover {
+  background-color: rgba(255, 255, 255, 0.8); /* Cambia de color al pasar el mouse */
+  transform: scale(1.1); /* Aumenta de tamaño al pasar el mouse */
+}
 
 .dots {
   position: absolute;
-  bottom: -25px;
-  color: #fff;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content:center;
-}
-
-.dots li {
+  justify-content: center;
   list-style: none;
-  width: 10px;
-  height: 10px;
-  background-color: #fff;
-  margin: 20px;
-  border-radius: 20px;
-  transition: 1s;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
 }
 
-.dots li.active{
-  width: 30px;
+.dots .dot {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  margin: 0 8px;
+  cursor: pointer;
+  
 }
+
+.dots .dot.active {
+  background-color: #fff;
+}
+
+
 
 
 /* @media screen and (max-width: 768px ) {
