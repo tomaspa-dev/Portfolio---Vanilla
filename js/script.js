@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       reloadSlider();
     }
   
-    let refreshSlider = setInterval(()=> {next.click()}, 3000);
+    let refreshSlider = setInterval(()=> {next.click()}, 1800);
   
     function reloadSlider() {
       let checkLeft = items[active].offsetLeft;
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       dots.forEach(dot => dot.classList.remove('active'));
       dots[active].classList.add('active');
       clearInterval(refreshSlider);
-      refreshSlider = setInterval(()=> {next.click()}, 3000);
+      refreshSlider = setInterval(()=> {next.click()}, 1800);
     }
   
     dots.forEach((dot, index) => {

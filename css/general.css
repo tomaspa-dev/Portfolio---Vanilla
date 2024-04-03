@@ -156,13 +156,13 @@ strong {
 }
 
 .heading-primary {
-  font-size: 5.2rem;
+  font-size: 6.2rem;
   line-height: 1.1;
   margin-bottom: 1.2rem;
 }
 
 .heading-secondary {
-  font-size: 3.6rem;
+  font-size: 4.4rem;
   line-height: 1.1;
   margin-bottom: 2.4rem;
   color: #ccc;
@@ -201,19 +201,19 @@ strong {
   color: #9b51e0;
 }
 
-.featured-tittle {
-  font-size: 6.2rem;
+.featured-title {
+  font-size: 3.6rem;
   line-height: 1.6;
 }
 
 .featured-secondary {
-  font-size: 3rem;
+  font-size: 2.4rem;
   line-height: 1.6;
   color: #ccc;
 }
 
 .featured-description {
-  font-size: 2.4rem;
+  font-size: 2.0rem;
   line-height: 1.6;
   color: #888;
 }
@@ -477,7 +477,7 @@ strong {
   overflow: hidden;
   /* white-space: nowrap; */
   position: relative;
-  height: calc(6rem * 15);
+  height: calc(6rem * 14);
 }
 
 .slider-box::before,
@@ -530,10 +530,10 @@ strong {
 .featured-number-two::before {
   content: "01";
   position: absolute;
-  font-size: 4.2rem;
+  font-size: 3.6rem;
   color: #b3b3b3;
   left: -10%;
-  top: 2%;
+  top: 0%;
 }
 
 .featured-number-two::before {
