@@ -60,11 +60,11 @@ My approach is to create systems that not only solve problems but also to delive
 ### Featured Projects
 #### Omnicron Endless War
 ##### Video Game Developer
-A Unity 3D Video Game made with C# modeled and animated with blender. The Video Game has randomly generated levels and many systems like levels, missions, score; and rewards when reaching 100 points.  
+A Unity 3D Video Game made with C# modeled and animated with blender. The Video Game has randomly generated levels.
 
 #### Ice Cream Shop
 ###### Web Developer
-A Landing page of an Ice Cream Shop. The Web is responsive, it effectively shows the 3 new flavors of a product, its features are shown with attractive images that lead the user to action, the purpose of the website is to provide the best experience with 3 new flavors of ice cream, and with an attractive offer when subscribing.
+A Landing page of an Ice Cream Shop. The Website its features are shown with attractive images that lead the user to action.
 
 ### Stadistics
 

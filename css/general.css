@@ -92,12 +92,20 @@ body {
   margin-right: 2rem !important;
 }
 
+.margin-bottom-xsm {
+  margin-bottom: 1.2rem !important;
+}
+
 .margin-bottom-sm {
   margin-bottom: 2rem !important;
 }
 
 .margin-bottom-md {
   margin-bottom: 4rem !important;
+}
+
+.margin-bottom-md--large {
+  margin-bottom: 6rem !important;
 }
 
 .margin-bottom-large {
@@ -236,6 +244,10 @@ strong {
   display: block;
   margin: 0 auto;
   padding: 1.5rem 0;
+}
+
+.featured-gif-box{
+  width: 100%;  
 }
 
 .btn,
@@ -449,7 +461,7 @@ strong {
 /* CAROUSEL SECTION */
 
 .carousel-section {
-  padding: 12rem 0;
+  padding: 8rem 0;
 }
 .slider {
   position: relative;
@@ -477,7 +489,7 @@ strong {
   overflow: hidden;
   /* white-space: nowrap; */
   position: relative;
-  height: calc(6rem * 14);
+  height: calc(6rem * 12);
 }
 
 .slider-box::before,
@@ -510,7 +522,7 @@ strong {
 
 .card {
   display: inline-block;
-  animation: 60s slide infinite linear;
+  animation: 50s slide infinite linear;
 }
 
 @keyframes slide {
