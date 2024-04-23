@@ -1,0 +1,72 @@
+/* GSAP SCROLL */
+.controls {
+    position: absolute;
+    right: 8rem;
+    top: 230%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.controls ul li {
+    display: block;
+    position: relative;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 50%;
+    background: #fff;
+    margin: 2rem 0;
+    cursor: pointer;
+}
+
+.controls ul li::before {
+    content: "";
+    display: block;
+    border: 2px solid #fff;
+    padding: .6rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform .3s ease;
+}
+
+.controls ul li:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.controls ul li.active::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.controls ul li::after {
+    content: "";
+    width: 1px;
+    height: calc(2rem + 4px);
+    background: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.controls ul li:last-child::after {
+    display: none;
+}
+
+/* Progress bar */
+.slideProgress {
+    width: 100%;
+    height:.5rem;
+    background: #b3aa91;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+
+/* hide slides */
+.featured-slide:not(.active) {
+    display: none;
+}

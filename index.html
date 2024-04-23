@@ -12,6 +12,9 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script type="module" src="https://unpkg.com/rough-notation?module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
     <script type="module" defer src="/js/script.js"></script>
     <title>Portfolio &mdash; Freelance Web Developer</title>
 </head>
@@ -125,244 +128,95 @@
         </div>
     </section>
 
-    <section class="featured-section margin-bottom-large" id="projects">
+    <section class="featured-section loading margin-bottom-large" id="projects">
         <div class="container">
-            <div class="featured-project margin-bottom-xlarge">
-                <div class="featured-text margin-bottom-md">
-                    <p class="primary-text featured-title featured-number-one">Omicron Endless War</p>
-                    <div class="featured-gif-box">
-                        <img class="featured-img" src="/img/Omicron-gif.gif" alt="Project Omicron">
-                    </div>
-                    <p class="primary-text featured-secondary">Video Game Developer</p>
-                    <p class="description-text featured-description margin-bottom-sm">A Unity 3D Video Game made with C#
-                        modeled and animated with blender. The Video Game has randomly generated levels.
-                    </p>
-                    <div class="project-tags margin-bottom-sm">
-                        <span class="tag">Unity</span>
-                        <span class="tag">Mobile</span>
-                        <span class="tag">Development</span>
-                        <span class="tag tech-tag">C#</span>
-                        <span class="tag tech-tag">Android</span>
-                    </div>
-
-                    <div><a class="btn btn--full open-popup-btn" href="#popup">Case study</a>
-                        <a class="btn btn--outline" target="_blank"
-                            href="https://github.com/tomaspa-dev/Portfolio---Unity-Videogame-C-">Github &rarr;</a>
-                    </div>
-
-
-                    <!-- Popup con el carrusel -->
-                    <div id="popup" class="overlay">
-                        <div class="popup">
-                            <div class="popup-header">
-                                <button class="close-btn">&times;</button>
+            <div class="background">
+                <div class="featured-wrap">
+                    <div class="featured-slide featured-slide1 active margin-bottom-xlarge">
+                        <div class="featured-text margin-bottom-md">
+                            <p class="primary-text featured-title featured-number-one">Omicron Endless War</p>
+                            <div class="featured-gif-box">
+                                <img class="featured-img-gif" src="/img/Omicron-gif.gif" alt="Project Omicron">
                             </div>
-                            <div class="slider-popup">
-                                <div class="list">
-                                    <div class="item">
-                                        <img src="img/VideoGame-001.webp" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/VideoGame-002.webp" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/VideoGame-003.webp" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/VideoGame-004.webp" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="img/VideoGame-005.webp" alt="">
-                                    </div>
-                                </div>
-                                <div class="buttons">
-                                    <button id="prev">&lt;</button>
-                                    <button id="next">&gt;</button>
-                                </div>
-                                <ul class="dots">
-                                    <li class="dot"></li>
-                                    <li class="dot"></li>
-                                    <li class="dot"></li>
-                                    <li class="dot"></li>
-                                    <li class="dot"></li>
-                                </ul>
+                            <p class="primary-text featured-secondary">Video Game Developer</p>
+                            <p class="description-text featured-description margin-bottom-sm">A Unity 3D Video Game made
+                                with C#
+                                modeled and animated with blender. The Video Game has randomly generated levels.
+                            </p>
+                            <div class="project-tags margin-bottom-sm">
+                                <span class="tag">Unity</span>
+                                <span class="tag">Mobile</span>
+                                <span class="tag">Development</span>
+                                <span class="tag tech-tag">C#</span>
+                                <span class="tag tech-tag">Android</span>
+                            </div>
+
+                            <div><a class="btn btn--full open-popup-btn" href="#popup">Case study</a>
+                                <a class="btn btn--outline" target="_blank"
+                                    href="https://github.com/tomaspa-dev/Portfolio---Unity-Videogame-C-">Github
+                                    &rarr;</a>
                             </div>
                         </div>
+
+                        <div class="featured-img-box">
+                            <img class="featured-img i1" src="/img/VideoGame-001.webp" alt="Videogame1">
+                            <img class="featured-img i2" src="/img/VideoGame-002.webp" alt="Videogame1">
+                            <img class="featured-img i3" src="/img/VideoGame-003.webp" alt="Videogame1">
+                            <img class="featured-img i4" src="/img/VideoGame-004.webp" alt="Videogame1">
+                            <img class="featured-img i5" src="/img/VideoGame-005.webp" alt="Videogame1">
+                            <img class="featured-img i6" src="/img/VideoGame-006.webp" alt="Videogame1">
+                        </div>
                     </div>
 
+                    <div class="featured-slide featured-slide2 margin-bottom-md">
+                        <div class="featured-text margin-bottom-md">
+                            <p class="primary-text featured-title featured-number-two">Ice Cream Shop</p>
+                            <div class="featured-gif-box">
+                                <img class="featured-img-gif" src="/img/Ice-cream-gif.gif" alt="Project Ice Cream Shop">
+                            </div>
+                            <p class="primary-text featured-secondary">Web Developer</p>
+                            <p class="description-text featured-description margin-bottom-sm">A Landing page of an Ice
+                                Cream
+                                Shop. The Website its features are shown with attractive images that lead the user to
+                                action.
+                            </p>
+                            <div class="project-tags margin-bottom-sm">
+                                <span class="tag">Landing Page</span>
+                                <span class="tag">Design</span>
+                                <span class="tag">Development</span>
+                                <span class="tag tech-tag">CSS</span>
+                                <span class="tag tech-tag">JS</span>
+                            </div>
+                            <div><a class="btn btn--full open-popup-btn" href="#popup-icecream-shop">Case study</a>
+                                <a class="btn btn--outline" target="_blank"
+                                    href="https://portfolio-icecreamshop.netlify.app/">Website
+                                    &rarr;</a>
+                            </div>
+                        </div>
 
-
-
-                </div>
-
-                <div class="slider-box">
-                    <div class="card">
                         <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-001.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-002.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-003.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-004.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-005.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-006.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-007.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-009.webp" alt="Project Omicron menu">
-                        </div>
-                        <!-- duplicate -->
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-001.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-002.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-003.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-004.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-005.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-006.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-007.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-009.webp" alt="Project Omicron menu">
-                        </div>
-                        <!-- duplicate 2 -->
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-001.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-002.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-003.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-004.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-005.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-006.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-007.webp" alt="Project Omicron menu">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/VideoGame-009.webp" alt="Project Omicron menu">
+                            <img class="featured-img i1" src="/img/landing-page-icecream.webp" alt="shop">
+                            <img class="featured-img i2" src="/img/portfolio-icecreamshop-002.webp" alt="shop">
+                            <img class="featured-img i2" src="/img/portfolio-icecreamshop-003.webp" alt="shop">
+                            <img class="featured-img i2" src="/img/portfolio-icecreamshop-004.webp" alt="shop">
+                            <img class="featured-img i2" src="/img/portfolio-icecreamshop-005.webp" alt="shop">
+                            <img class="featured-img i2" src="/img/portfolio-icecreamshop-006.webp" alt="shop">
                         </div>
                     </div>
+
+                    <div class="controls">
+                        <ul>
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div class="slideProgress"></div>
+
                 </div>
             </div>
-
-            <div class="featured-project margin-bottom-md">
-                <div class="featured-text margin-bottom-md">
-                    <p class="primary-text featured-title featured-number-two">Ice Cream Shop</p>
-                    <div class="featured-gif-box">
-                        <img class="featured-img" src="/img/Ice-cream-gif.gif" alt="Project Ice Cream Shop">
-                    </div>
-                    <p class="primary-text featured-secondary">Web Developer</p>
-                    <p class="description-text featured-description margin-bottom-sm">A Landing page of an Ice Cream
-                        Shop. The Website its features are shown with attractive images that lead the user to action.
-                    </p>
-                    <div class="project-tags margin-bottom-sm">
-                        <span class="tag">Landing Page</span>
-                        <span class="tag">Design</span>
-                        <span class="tag">Development</span>
-                        <span class="tag tech-tag">CSS</span>
-                        <span class="tag tech-tag">JS</span>
-                    </div>
-                    <div><a class="btn btn--full open-popup-btn" href="#popup-icecream-shop">Case study</a>
-                        <a class="btn btn--outline" target="_blank"
-                            href="https://portfolio-icecreamshop.netlify.app/">Website
-                            &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="slider-box">
-                    <div class="card">
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/landing-page-icecream.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-002.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-003.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-004.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-005.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-006.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-007.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-
-                        <!-- Duplicate -->
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/landing-page-icecream.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-002.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-003.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-004.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-005.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-006.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                        <div class="featured-img-box">
-                            <img class="featured-img" src="/img/portfolio-icecreamshop-007.webp"
-                                alt="Project Ice Cream Shop">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </section>
 

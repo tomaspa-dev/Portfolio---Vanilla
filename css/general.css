@@ -124,6 +124,11 @@ body {
   padding-bottom: 12rem;
 }
 
+.padding--zero {
+  padding: 0;
+}
+
+
 .center-text {
   text-align: center;
 }
@@ -226,24 +231,29 @@ strong {
   color: #888;
 }
 
-.featured-project {
+.featured-slide1, .featured-slide2 {
   display: grid;
   grid-template-columns: 3fr 2fr;
-  gap: 1rem;
+  gap: 3rem;
   align-items: start;
 }
 
 .featured-img-box {
-  max-width: 80%;
+  max-width: 40%;
   margin: 0 auto;
 }
 
-.featured-img {
+.featured-img-gif, .featured-img {
   width: 100%;
   height: auto;
   display: block;
   margin: 0 auto;
   padding: 1.5rem 0;
+}
+
+.featured-img {
+  padding: 0;
+  padding-top: 10px;
 }
 
 .featured-gif-box{
