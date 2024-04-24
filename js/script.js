@@ -1,3 +1,4 @@
+// Registro de plugins GSAP
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
 
@@ -5,72 +6,63 @@ var slide = 1;
 var pauseSlider = false;
 var progress = 0;
 
-/* Slide animations */
-var tl1 = gsap.timeline({paused: false});
-var ease = CustomEase.create("custom", "M0,0 C0.246,0.041 0.22,0.315 0.359,0.606 0.427,0.748 0.571,0.989 1,1 ")
+// Definición de animaciones para cada diapositiva
+var tl1 = gsap.timeline({ paused: true });
+tl1.from(".featured-slide1 .featured-text", { opacity: 0, y: 50, duration: 1.0, ease: "expo.out" })
+   .from(".featured-slide1 .featured-img", { opacity: 0, scale: 0.5, duration: 1.0, ease: "power1.out" });
 
-tl1.from(".featured-slide .featured-img-gif", {y:"110%", opacity: 0, ease: ease, duration: 1, scaleY: .5}, .7);
+var tl2 = gsap.timeline({ paused: true });
+tl2.from(".featured-slide2 .featured-text", { opacity: 0, y: 50, duration: 1.0, ease: "expo.out" })
+   .from(".featured-slide2 .featured-img", { opacity: 0, scale: 0.5, duration: 1.0, ease: "power1.out" });
 
-tl1.from(".featured-slide .featured-img-box", {y:"110%", opacity: 0, ease: ease, duration: 1, scaleY: .5}, .9);
-
-tl1.fromTo(".featured-slide .featured-title .featured-secondary .featured-description", {y: '40%', opacity: 0, duration:1 , ease: 'power3.out'}, {y: '0%', opacity: 1},.9);
-
-
+// Función para cambiar entre diapositivas
 function changeSlide(id) {
-    let slides = document.querySelectorAll(".featured-slide"); // Corregir el selector CSS
+    // Eliminar la clase 'active' de todas las diapositivas
+    let slides = document.querySelectorAll(".featured-slide");
     slides.forEach(slide => {
         slide.classList.remove("active");
     });
 
-    let newSlide = document.querySelector(".featured-slide.featured-slide" + id); // Corregir el selector CSS
+    // Añadir la clase 'active' a la diapositiva correspondiente
+    let newSlide = document.querySelector(".featured-slide.featured-slide" + id);
     newSlide.classList.add("active");
 
+    // Iniciar la animación de la nueva diapositiva
+    if (id === 1) {
+        tl1.restart();
+    } else if (id === 2) {
+        tl2.restart();
+    }
+
+    // Actualizar el número de diapositiva actual
     slide = id;
 
-    // Resetear controles a inactivos
+    // Reiniciar los controles a inactivos
     let controls = document.querySelectorAll(".controls ul li");
     controls.forEach((f) => {
         f.classList.remove("active");
     });
 
-    // Establecer nuevo activo
+    // Establecer el nuevo control como activo
     controls[id - 1].classList.add("active");
 
-    // Animate the transition
+    // Animar la transición (opcional)
     gsap.to(".featured-slide", {
         opacity: 0,
-        duration: 0.5,
+        duration: 1.0,
         ease: "power2.inOut"
     });
-    gsap.to(".featured-slide" + id, {
+    gsap.to(".featured-slide.featured-slide" + id, {
         opacity: 1,
-        duration: 0.5,
+        duration: 1.0,
         ease: "power2.inOut"
     });
 }
 
-// Agregar eventos de clic a los controles derechos
+// Agregar eventos de clic a los controles
 var controls = document.querySelectorAll(".controls ul li");
-for (let i = 0; i < controls.length; i++){
+for (let i = 0; i < controls.length; i++) {
     controls[i].addEventListener("click", () => {
-        changeSlide(i+1);
+        changeSlide(i + 1);
     });
 }
-
-function startProgressBar() {
-    setInterval(() => {
-        if(pauseSlider) return;
-        progress += .1;
-
-        if(progress >= 8) {
-            changeSlide((slide % 4) + 1);
-            progress = 0;        
-        }
-        
-
-        gsap.to(".slideProgress", 
-        {scaleX: progress / 8, duration: .3});
-    },100);
-}
-
-// startProgressBar();
