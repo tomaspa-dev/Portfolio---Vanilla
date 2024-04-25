@@ -548,7 +548,7 @@ strong {
   position: relative;
 }
 
-.featured-number-one::before,
+/* .featured-number-one::before,
 .featured-number-two::before {
   content: "01";
   position: absolute;
@@ -556,6 +556,18 @@ strong {
   color: #b3b3b3;
   left: -10%;
   top: 0%;
+} */
+
+.featured-number-one::before,
+.featured-number-two::before {
+    content: "01";
+    position: absolute;
+    font-size: 3.6rem;
+    color: #b3b3b3;
+    /* left: -10%; */
+    top: 10%;
+    right: 0%;
+    z-index: 2; /* Para asegurarse de que los números estén encima del contenido */
 }
 
 .featured-number-two::before {

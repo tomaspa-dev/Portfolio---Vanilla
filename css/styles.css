@@ -71,17 +71,74 @@
     display: none;
 }
 
+
+/* Modificación de la animación para aplicarla solo al texto del slide activo */
+.block-reveal {
+    overflow: hidden;
+    position: relative; 
+    /* animation: 0.001s linear 0.5s 1 normal forwards running color; */
+}
+
+.block::after {
+    content: '';
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 88%;
+    /* animation: reveal 1s ease-in-out; */
+    animation: 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0s 1 normal forwards running reveal;
+    animation-fill-mode: forwards;
+    background: #af74e6;
+    z-index: 4;
+    pointer-events: none;
+}
+
+@keyframes reveal {
+    0% {
+        transform: translateX(-100%);
+    }
+    
+    50% {
+        transform: translateX(0);
+    }
+    
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes color {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+
+.featured-img-box img {
+    transition: filter 0.3s ease;
+}
+
+.featured-img-box img:hover {
+    filter: brightness(70%); /* O cualquier otro efecto de filtro que desees */
+}
+
+
 /* Block Reveal */
 #square-container {
     width: 100vw;
     height: 100vh;
+    width: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: flex-start;
     box-sizing: border-box;
     overflow: hidden;
-    z-index: 999;
+    z-index: 1;
     pointer-events: none;
 }
 
@@ -90,6 +147,7 @@
     height: 100px;
     background: #fd552f;
 }
+
 
 /* 
 .content-overlay {
