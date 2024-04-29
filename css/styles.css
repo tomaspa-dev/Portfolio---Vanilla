@@ -2,18 +2,19 @@
 .controls {
     position: absolute;
     right: 8rem;
-    top: 230%;
+    top: 250%;
+    right: 13%;
     transform: translateY(-50%);
-    z-index: 2;
+    z-index: 3;
 }
 
 .controls ul li {
     display: block;
     position: relative;
-    width: .5rem;
-    height: .5rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
-    background: #fff;
+    background: #af74e6;
     margin: 2rem 0;
     cursor: pointer;
 }
@@ -21,8 +22,8 @@
 .controls ul li::before {
     content: "";
     display: block;
-    border: 2px solid #fff;
-    padding: .6rem;
+    border: 2px solid #a562e3;
+    padding: 1.2rem;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -41,18 +42,28 @@
 
 .controls ul li::after {
     content: "";
-    width: 1px;
-    height: calc(2rem + 4px);
+    width: 1.5px;
+    height: calc(2.5rem + 4px);
     background: rgba(255, 255, 255, 0.3);
+    background: #cda8f0;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: -1;
 }
 
 .controls ul li:last-child::after {
     display: none;
 }
+
+/* images open and close */
+
+
+
+
+
+
 
 /* Progress bar */
 .slideProgress {
@@ -124,6 +135,111 @@
 .featured-img-box img:hover {
     filter: brightness(70%); /* O cualquier otro efecto de filtro que desees */
 }
+
+/* Lightbox styles */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    flex-direction: column;
+    z-index: 10;
+}
+
+#lightbox img {
+    max-width: 80%;
+    max-height: 60vh;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Style for navigation buttons */
+#prev-btn,
+#next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Añadimos estilos para posicionar los botones y la X */
+#prev-btn {
+    left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#next-btn {
+    right: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#prev-btn, #next-btn {
+    transition: opacity 0.3s;
+}
+
+
+
+#prev-btn:hover,
+#next-btn:hover {
+    opacity: 0.4;
+    /* background-color: rgba(0, 0, 0, 0.8); */
+}
+
+/* Styles for thumbnails */
+.thumbnail-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.thumbnail {
+    max-width: 50px;
+    width: 100px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* border: 2px solid #fff; */
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover,
+.thumbnail.active-thumbnail {
+    opacity: 0.7;
+}
+
+
+
+
+
+
 
 
 /* Block Reveal */
