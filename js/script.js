@@ -6,6 +6,28 @@ let slide = 1;
 let pauseSlider = false;
 let progress = 0;
 
+
+
+// Generar los cuadrados
+const container = document.querySelector('.square-container');
+const numCols = Math.floor(container.offsetWidth / 60); // Ancho del contenedor dividido entre el tamaño de los cuadrados
+const numRows = Math.floor(container.offsetHeight / 60); // Alto del contenedor dividido entre el tamaño de los cuadrados
+
+const offsetX = 150; 
+const offsetY = 125;
+
+for (let row = 0; row < numRows; row++) {
+    for (let col = 0; col < numCols; col++) {
+        const square = document.createElement('div');
+        square.classList.add('square');
+        square.style.left = `${col * 60 + offsetX}px`; // Posicionamiento horizontal centrado del cuadrado
+        square.style.top = `${row * 60 + offsetY}px`; // Posicionamiento vertical centrado del cuadrado
+        container.appendChild(square); // Agregar cuadrado al contenedor
+    }
+}
+
+
+
 // Change Slide Animation
 // Cambiar Slide con retraso y animación
 function changeSlide(id) {
@@ -169,6 +191,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
 
 

@@ -461,12 +461,16 @@ strong {
   background-image: url('/img/fondo-001.webp');
   background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
   background: linear-gradient(to right, #0b081d, #26224f, #0b081d);
-
+  position: relative; /* Para posicionar los cuadrados relativos a esta sección */
+  overflow: hidden;
+  text-align: center;
 }
   
 .hero-text {
   position: relative;
   text-align: center;
+  display: inline-block;
+  z-index: 2;
 }
 
 /* CAROUSEL SECTION */
