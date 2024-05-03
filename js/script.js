@@ -7,7 +7,6 @@ let pauseSlider = false;
 let progress = 0;
 
 
-
 // Generar los cuadrados
 const container = document.querySelector('.square-container');
 const numCols = Math.floor(container.offsetWidth / 60); // Ancho del contenedor dividido entre el tamaño de los cuadrados
@@ -25,6 +24,98 @@ for (let row = 0; row < numRows; row++) {
         container.appendChild(square); // Agregar cuadrado al contenedor
     }
 }
+
+// Función para iluminar dos cuadrados en posiciones aleatorias y luego iluminar los cuadrados debajo uno por uno
+function illuminateAndMoveDown() {
+    const squares = document.querySelectorAll('.square');
+    const numSquares = squares.length;
+
+    // Desactivar todas las luces
+    squares.forEach(square => square.classList.remove('highlighted'));
+
+    // Seleccionar dos posiciones aleatorias diferentes
+    let randomIndex1 = Math.floor(Math.random() * numSquares);
+    let randomIndex2 = Math.floor(Math.random() * numSquares);
+    while (Math.abs(randomIndex1 - randomIndex2) < 2) {
+        randomIndex2 = Math.floor(Math.random() * numSquares);
+    }
+
+    const square1 = squares[randomIndex1];
+    const square2 = squares[randomIndex2];
+
+    // Iluminar los dos cuadrados en sus posiciones aleatorias
+    square1.classList.add('highlighted');
+    square2.classList.add('highlighted');
+
+    // Determinar si los cuadrados deben moverse hacia arriba o hacia abajo
+    const moveDown1 = Math.random() < 0.5;
+    const moveDown2 = Math.random() < 0.5;
+
+    // Establecer temporizadores para desactivar la iluminación después de 0.5 segundos
+    setTimeout(() => {
+        square1.classList.remove('highlighted');
+        // Iluminar los cuadrados debajo o arriba si existen
+        illuminateNextSquare(square1, moveDown1);
+    }, 500);
+
+    setTimeout(() => {
+        square2.classList.remove('highlighted');
+        // Iluminar los cuadrados debajo o arriba si existen
+        illuminateNextSquare(square2, moveDown2);
+    }, 500);
+}
+
+// Función para iluminar el cuadrado debajo o arriba si existe
+function illuminateNextSquare(square, moveDown) {
+    const squareSize = 60; // Tamaño del cuadrado en píxeles
+    const direction = moveDown ? 'down' : 'up';
+
+    // Obtener la posición actual del cuadrado
+    const currentPosition = square.getBoundingClientRect();
+    const currentLeft = currentPosition.left;
+    const currentTop = currentPosition.top;
+
+    // Calcular la posición del cuadrado debajo o arriba
+    const newTop = moveDown ? currentTop + squareSize : currentTop - squareSize;
+    
+    // Encontrar el cuadrado debajo o arriba si existe
+    const newSquare = document.elementFromPoint(currentLeft + squareSize / 2, newTop + squareSize / 2);
+    if (newSquare && newSquare.classList.contains('square')) {
+        // Iluminar el cuadrado debajo o arriba
+        newSquare.classList.add('highlighted');
+        // Establecer temporizador para desactivar la iluminación después de 0.5 segundos
+        setTimeout(() => {
+            newSquare.classList.remove('highlighted');
+            // Iluminar el siguiente cuadrado debajo o arriba si existe
+            illuminateNextSquare(newSquare, moveDown);
+        }, 500);
+    }
+}
+
+// Iniciar el proceso de iluminación de los cuadrados
+illuminateAndMoveDown(); // Iniciar el proceso una vez
+
+// Establecer intervalo para que el proceso se repita cada 4 segundos
+setInterval(illuminateAndMoveDown, 2500);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

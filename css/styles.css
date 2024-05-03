@@ -68,10 +68,10 @@
     width: 60px;
     height: 60px;
     background-color: transparent;
-    border: 0.05px solid black;
+    border: 2.05px solid #2e1843;
     position: absolute; /* Para posicionar los cuadrados */
     transition: background-color 0.3s ease; /* Transición al hacer hover */
-    opacity: 0.15;
+    opacity: 0.25;
     /* margin: 10px; */
 }
 
@@ -81,7 +81,11 @@
     opacity: 0.55;
 }
 
-
+/* Clase para resaltar los cuadrados */
+.highlighted {
+    background-color: rgba(255, 203, 246, 0.2); ; /* Cambia el color de fondo de los cuadrados resaltados */
+    opacity: 0.45;
+}
 
 
 
