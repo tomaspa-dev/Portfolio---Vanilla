@@ -102,23 +102,6 @@ setInterval(illuminateAndMoveDown, 2500);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Change Slide Animation
 // Cambiar Slide con retraso y animación
 function changeSlide(id) {
@@ -184,18 +167,35 @@ function startProgressBar() {
     },100);
 }
 
-//startProgressBar();
+// startProgressBar();
 
+// Manejo de Galerías
+// Manejo de Galerías
 let currentIndex = 0;
 let totalImages;
+let currentImagePaths = [];
 
-function openLightbox(event) {
-    if (event.target.tagName === 'IMG') {
-        const clickedIndex = Array.from(event.currentTarget.querySelectorAll('img')).indexOf(event.target);
-        currentIndex = clickedIndex;
-        updateLightboxImage(event.currentTarget);
-        document.getElementById('lightbox').style.display = 'flex';
-    }
+function openLightbox(imagePaths) {
+    const lightboxImg = document.getElementById('lightbox-img');
+    const thumbnailContainer = document.getElementById('thumbnail-container');
+
+    lightboxImg.src = imagePaths[currentIndex];
+
+    thumbnailContainer.innerHTML = '';
+
+    imagePaths.forEach((path, index) => {
+        const thumbnail = document.createElement('img');
+        thumbnail.src = path;
+        thumbnail.alt = `Thumbnail ${index + 1}`;
+        thumbnail.classList.add('thumbnail');
+        if (index === currentIndex) {
+            thumbnail.classList.add('active-thumbnail');
+        }
+        thumbnail.addEventListener('click', () => updateMainImage(index, imagePaths));
+        thumbnailContainer.appendChild(thumbnail);
+    });
+
+    document.getElementById('lightbox').style.display = 'flex';
 }
 
 function closeLightbox() {
@@ -203,44 +203,35 @@ function closeLightbox() {
 }
 
 function changeImage(direction) {
-    const activeGallery = document.querySelector('.featured-img-box.active-gallery');
-    const galleryImages = activeGallery.querySelectorAll('img');
-
     currentIndex += direction;
-    if (currentIndex >= galleryImages.length) {
+    if (currentIndex >= currentImagePaths.length) {
         currentIndex = 0;
     } else if (currentIndex < 0) {
-        currentIndex = galleryImages.length - 1;
+        currentIndex = currentImagePaths.length - 1;
     }
-    updateLightboxImage(activeGallery);
+    openLightbox(currentImagePaths);
 }
 
-function updateLightboxImage(gallery) {
-    const lightboxImg = document.getElementById('lightbox-img');
-    const thumbnailContainer = document.getElementById('thumbnail-container');
+function updateMainImage(index, imagePaths) {
+    currentIndex = index;
+    openLightbox(imagePaths);
+}
+
+// Función para activar la galería con las imágenes en el HTML
+function activateGallery(gallery) {
+    const galleries = document.querySelectorAll('.featured-img-box');
+    galleries.forEach(g => g.classList.remove('active-gallery'));
+    gallery.classList.add('active-gallery');
 
     const galleryImages = gallery.querySelectorAll('img');
-
-    lightboxImg.src = galleryImages[currentIndex].src;
-
-    thumbnailContainer.innerHTML = '';
-
-    galleryImages.forEach((image, index) => {
-        const thumbnail = document.createElement('img');
-        thumbnail.src = image.src;
-        thumbnail.alt = `Thumbnail ${index + 1}`;
-        thumbnail.classList.add('thumbnail');
-        if (index === currentIndex) {
-            thumbnail.classList.add('active-thumbnail');
-        }
-        thumbnail.addEventListener('click', () => updateMainImage(index));
-        thumbnailContainer.appendChild(thumbnail);
-    });
+    currentImagePaths = Array.from(galleryImages).map(img => img.src);
+    openLightbox(currentImagePaths);
 }
 
-function updateMainImage(index) {
-    currentIndex = index;
-    updateLightboxImage(document.querySelector('.featured-img-box.active-gallery'));
+// Función para activar la galería con los botones en JavaScript
+function activateGalleryWithButtons(imagePaths) {
+    currentImagePaths = imagePaths;
+    openLightbox(imagePaths);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -248,14 +239,7 @@ document.addEventListener('DOMContentLoaded', function() {
     totalImages = galleries[0].querySelectorAll('img').length;
 
     galleries.forEach(gallery => {
-        gallery.addEventListener('click', () => {
-            galleries.forEach(g => g.classList.remove('active-gallery'));
-            gallery.classList.add('active-gallery');
-        });
-    });
-
-    galleries.forEach(gallery => {
-        gallery.addEventListener('click', openLightbox);
+        gallery.addEventListener('click', () => activateGallery(gallery));
     });
 
     document.getElementById('close-btn').addEventListener('click', closeLightbox);
@@ -272,141 +256,91 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (document.getElementById('lightbox').style.display === 'flex') {
-            if (e.key === 'Escape') { // Comprobamos si se presionó la tecla ESC
+            if (e.key === 'Escape') {
                 closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                changeImage(-1);
-            } else if (e.key === 'ArrowRight') {
-                changeImage(1);
             }
         }
     });
 });
 
+// Bloque de Efectos
+const actionButtons = document.querySelectorAll('.toggle');
 
+actionButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        button.disabled = true; // Desactiva el botón
 
+        const squareBox = document.getElementById("square-box");
+        let squares = [];
+        let gridSizeX = Math.ceil(window.innerWidth / 100); // Número de cuadrados por fila (ancho)
+        let gridSizeY = Math.ceil(window.innerHeight / 100); // Número de cuadrados por columna (alto)
+        let intervalId;
+        let occupiedPositions = new Set();
 
+        function getRandomPosition() {
+            let position;
+            do {
+                const x = Math.floor(Math.random() * gridSizeX) * 100;
+                const y = Math.floor(Math.random() * gridSizeY) * 100;
+                position = `${x},${y}`;
+            } while (occupiedPositions.has(position));
+            occupiedPositions.add(position);
+            return { x: parseInt(position.split(",")[0]), y: parseInt(position.split(",")[1]) };
+        }
 
-// // Block Reveal
-// const menu = document.querySelector(".featured-slide");
-// const squareContainer = document.getElementById("square-container");
-// const squareSize = 100;
-// const screenWidth = window.innerWidth;
-// const screenHeight = window.innerHeight;
-// const numCols = Math.ceil(screenWidth / squareSize);
-// const numRows = Math.ceil(screenHeight / squareSize);
-// const numSquares = numCols * numRows;
-// squareContainer.style.width = `${numCols * squareSize}px`;
-// squareContainer.style.height = `${numRows * squareSize}px`;
+        function createSquare() {
+            const { x, y } = getRandomPosition();
+            const square = document.createElement("div");
+            square.classList.add("square-e");
+            square.style.left = x + "px";
+            square.style.top = y + "px";
+            squareBox.appendChild(square);
+            squares.push(square);
+        }
 
-// let squares = [];
-// function createSquares() {
-//     for (let i = 0; i < numSquares; i++) {
-//         const square = document.createElement("div");
-//         square.classList.add("square");
-//         squareContainer.appendChild(square);
-//         squares.push(square);
-//     }
-// }
+        function generateSquares() {
+            const totalSquares = gridSizeX * gridSizeY;
+            let squaresGenerated = 0;
+            intervalId = setInterval(() => {
+                createSquare();
+                squaresGenerated++;
+                if (squaresGenerated >= totalSquares) {
+                    clearInterval(intervalId);
+                    // Abre la galería justo antes de comenzar a eliminar los cuadrados
+                    const imagePaths = getImagePaths(button);
+                    setTimeout(() => {
+                        removeSquares();
+                        activateGalleryWithButtons(imagePaths);
+                    }, 1000); // Espera 1 segundo antes de comenzar a eliminar los cuadrados
+                }
+            }, 0.01); // Intervalo más rápido
+        }
 
-// function animateSquares() {
-//     gsap.fromTo(squares, {
-//         opacity: 0
-//     },{
-//         opacity: 1, delay: 0.5, duration: 0.005, stager: {
-//             each: 0.004, from: "random",
-//         },
-//     });
-//     gsap.to(squares, {
-//         opacity: 0, delay: 1.5, duration: 0.0005,stager: {
-//             each: 0.004, from: "random",
-//         },
-//     });
-// }
+        function removeSquares() {
+            occupiedPositions.clear();
+            const totalSquares = squares.length;
+            let squaresRemoved = 0;
+            intervalId = setInterval(() => {
+                squares[squares.length - 1].remove();
+                squares.pop();
+                squaresRemoved++;
+                if (squaresRemoved >= totalSquares) {
+                    clearInterval(intervalId);
+                    button.disabled = false; // Habilita nuevamente el botón
+                }
+            }, 0.01); // Intervalo más rápido
+        }
 
-// createSquares();
-// animateSquares();
+        generateSquares();
+    });
+});
 
-// document.querySelector(".controls").addEventListener("click", ()=> {
-//     squareContainer.innerHTML = "";
-//     squares = [];
-//     createSquares();
-//     animateSquares();
-
-//     gsap.to(menu, 0.025, {
-//         opacity: overlayVisible ? 0 : 1,
-//         visible: overlayVisible ? "hidden" : "visible",
-//         delay: 1.15, 
-//     });
-
-//     gsap.to(menu, {
-//         zIndex: overlayVisible ? -1 : 0, 
-//         delay: overlayVisible ? 0 : 2,
-//     });
-//     overlayVisible = !overlayVisible;
-// });
-
-
-
-
-
-// // Definición de animaciones para cada diapositiva
-// var tl1 = gsap.timeline({ paused: true });
-// tl1.from(".featured-slide1 .featured-text", { opacity: 0, y: 50, duration: 1.0, ease: "expo.out" })
-//    .from(".featured-slide1 .featured-img", { opacity: 0, scale: 0.5, duration: 1.0, ease: "power1.out" });
-
-// var tl2 = gsap.timeline({ paused: true });
-// tl2.from(".featured-slide2 .featured-text", { opacity: 0, y: 50, duration: 1.0, ease: "expo.out" })
-//    .from(".featured-slide2 .featured-img", { opacity: 0, scale: 0.5, duration: 1.0, ease: "power1.out" });
-
-// // Función para cambiar entre diapositivas
-// function changeSlide(id) {
-//     // Eliminar la clase 'active' de todas las diapositivas
-//     let slides = document.querySelectorAll(".featured-slide");
-//     slides.forEach(slide => {
-//         slide.classList.remove("active");
-//     });
-
-//     // Añadir la clase 'active' a la diapositiva correspondiente
-//     let newSlide = document.querySelector(".featured-slide.featured-slide" + id);
-//     newSlide.classList.add("active");
-
-//     // Iniciar la animación de la nueva diapositiva
-//     if (id === 1) {
-//         tl1.restart();
-//     } else if (id === 2) {
-//         tl2.restart();
-//     }
-
-//     // Actualizar el número de diapositiva actual
-//     slide = id;
-
-//     // Reiniciar los controles a inactivos
-//     let controls = document.querySelectorAll(".controls ul li");
-//     controls.forEach((f) => {
-//         f.classList.remove("active");
-//     });
-
-//     // Establecer el nuevo control como activo
-//     controls[id - 1].classList.add("active");
-
-//     // Animar la transición (opcional)
-//     gsap.to(".featured-slide", {
-//         opacity: 0,
-//         duration: 1.0,
-//         ease: "power2.inOut"
-//     });
-//     gsap.to(".featured-slide.featured-slide" + id, {
-//         opacity: 1,
-//         duration: 1.0,
-//         ease: "power2.inOut"
-//     });
-// }
-
-// // Agregar eventos de clic a los controles
-// var controls = document.querySelectorAll(".controls ul li");
-// for (let i = 0; i < controls.length; i++) {
-//     controls[i].addEventListener("click", () => {
-//         changeSlide(i + 1);
-//     });
-// }
+function getImagePaths(button) {
+    let imagePaths = [];
+    if (button.classList.contains('btn-1')) {
+        imagePaths = ["/img/VideoGame-001.webp", "/img/VideoGame-002.webp", "/img/VideoGame-003.webp"];
+    } else if (button.classList.contains('btn-2')) {
+        imagePaths = ["/img/port-1.webp", "/img/port-2.webp", "/img/port-3.webp"];
+    }
+    return imagePaths;
+}

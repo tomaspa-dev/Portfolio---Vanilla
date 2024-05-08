@@ -179,7 +179,7 @@
     align-items: center;
     overflow: hidden;
     flex-direction: column;
-    z-index: 10;
+    z-index: 9;
 }
 
 #lightbox img {
@@ -264,21 +264,18 @@
     opacity: 0.7;
 }
 
+.square-box{
+    position: relative;
+    /* width: 100%;
+    height: 100%;
+    overflow: hidden; */
+}
 
-
-
-/* 
-.content-overlay {
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 5em;
-    background: #242424;
-    color: #fff;
-    z-index: 1;
-} 
-*/
+.square-e {
+    width: 115px;
+    height: 115px;
+    background-color: #9b51e0;;
+    position: absolute;
+    /* pointer-events: none; */
+    z-index: 10;
+}
