@@ -166,8 +166,9 @@ function startProgressBar() {
         {scaleX: progress / 8, duration: .3});
     },100);
 }
-
 // startProgressBar();
+
+
 
 // Manejo de Galerías
 // Manejo de Galerías
@@ -215,6 +216,14 @@ function changeImage(direction) {
 function updateMainImage(index, imagePaths) {
     currentIndex = index;
     openLightbox(imagePaths);
+}
+
+
+// Función para bloquear el scroll al desplazar con la rueda del ratón
+function preventWheelScroll(event) {
+    if (document.getElementById('lightbox').style.display === 'flex') {
+        event.preventDefault();
+    }
 }
 
 // Función para activar la galería con las imágenes en el HTML
@@ -344,3 +353,7 @@ function getImagePaths(button) {
     }
     return imagePaths;
 }
+
+
+// Asociamos el evento de desplazamiento de la rueda del ratón al bloqueo de scroll
+document.addEventListener('wheel', preventWheelScroll, { passive: false });
