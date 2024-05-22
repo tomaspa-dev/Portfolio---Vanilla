@@ -2,6 +2,9 @@
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
 
+
+
+
 let slide = 1;
 let pauseSlider = false;
 let progress = 0;

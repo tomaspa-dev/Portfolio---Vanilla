@@ -279,3 +279,30 @@
     /* pointer-events: none; */
     z-index: 10;
 }
+
+
+/* esferas */
+.sphere {
+    position: absolute;
+    transition: transform 0.3s ease-out, opacity 1s ease; /* Agregar transición de opacidad */
+    transform-style: preserve-3d;
+    border-radius: 50%;
+  }
+
+  .js-sphere {
+    width: 100px;
+    height: 100px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png') no-repeat center/contain;
+  }
+
+  .html-sphere {
+    width: 100px;
+    height: 100px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg') no-repeat center/contain;
+  }
+
+  .css-sphere {
+    width: 100px;
+    height: 100px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg') no-repeat center/contain;
+  }
