@@ -1,6 +1,5 @@
 /* 
 ---01 TYPOGRAPHY SYSTEM
-
 - Font sizes (px)
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 
@@ -18,41 +17,44 @@ Paragraph default: 1.6
 Large: 1.8
 
 -Letter spacing:
+-0.5px;
 0.5px
 0.75px
 
 --- 02 COLORS
-
 - Primary: #9b51e0
 - Tints:
-#fdf2e9
-#fae5d3
-#eb984e
-
-#161616
-#1A1A1A
-rgba(37, 37, 37, 1);
+50%
+#cda8f0
+30%
+#b985e9
+20%
+#af74e6
+10%
+#a562e3
 
 - Shades: 
-#cf711f
-#45260a
+70%
+#2e1843
+30%
+#6d399d
 
 - Accents:
-- Greys
+- Greys:
 #888
-#767676 (lightest grey allowed on #fff)
-#6f6f6f (lightest grey allowed on #fdf2e9)
-#555
-#333
+#999
+#b3b3b3
+#ccc
+#e6e6e6
+#9ba1a6
+
 
 --- 05 SHADOWS
-0 2.4rem 4.8rem rgba(0, 0, 0, 0.079)
+0 0 2.5rem rgba(0, 0, 0, 0.8);
 
 --- 06 BORDER-RADIUS
-
 Default: 9px
-Medium: 11px
-
+Max: 100px
 
 --- 07 WHITESPACE
 -- Spacing system (px)
@@ -104,7 +106,7 @@ body {
   margin-bottom: 4rem !important;
 }
 
-.margin-bottom-md--large {
+.margin-bottom-md-large {
   margin-bottom: 6rem !important;
 }
 
@@ -116,18 +118,17 @@ body {
   margin-bottom: 24rem !important;
 }
 
-.padding--small {
+.padding-small {
   padding-bottom: 4rem;
 }
 
-.padding--medium {
+.padding-medium {
   padding-bottom: 12rem;
 }
 
-.padding--zero {
+.padding-zero {
   padding: 0;
 }
-
 
 .center-text {
   text-align: center;
@@ -138,19 +139,14 @@ body {
   gap: 0.5rem
 }
 
-.one--column {
+.one-column {
   display: flex;
   gap: 2rem;
 }
 
-
 strong {
   font-weight: 500;
 }
-
-
-
-
 
 /*******************************/
 
@@ -299,7 +295,6 @@ strong {
 }
 
 /** HEADER **/
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -311,7 +306,6 @@ strong {
 }
 
 .logo {
-  /* height: 8.6rem; */
   font-family: "Lobster";
   font-weight: 400;
   font-size: 3.6rem;
@@ -329,7 +323,6 @@ strong {
 }
 
 /* NAVIGATION */
-
 .main-nav-header {
   display: flex;
 }
@@ -394,7 +387,7 @@ strong {
 .scroll-down {
   height: 50px;
   width: 30px;
-  border: 2px solid white;
+  border: 2px solid #fff;
   position: absolute;
   left: 48.5%;
   bottom: -60px;
@@ -451,7 +444,7 @@ strong {
   height: 5.6rem;
   width: 5.6rem;
   border-radius: 50%;
-  border: 1.6px solid White;
+  border: 1.6px solid #fff;
 }
 
 .hero-section {
@@ -474,10 +467,10 @@ strong {
 }
 
 /* CAROUSEL SECTION */
-
 .carousel-section {
   padding: 8rem 0;
 }
+
 .slider {
   position: relative;
   width: 90%;
@@ -496,13 +489,9 @@ strong {
   animation: scroll 15s linear infinite;
 }
 
-/* .slider-projects:hover {
-  animation-play-state: paused;
-} */
 
 .slider-box {
   overflow: hidden;
-  /* white-space: nowrap; */
   position: relative;
   height: calc(6rem * 12);
 }
@@ -553,23 +542,12 @@ strong {
   position: relative;
 }
 
-/* .featured-number-one::before,
-.featured-number-two::before {
-  content: "01";
-  position: absolute;
-  font-size: 3.6rem;
-  color: #b3b3b3;
-  left: -10%;
-  top: 0%;
-} */
-
 .featured-number-one::before,
 .featured-number-two::before {
     content: "01";
     position: absolute;
     font-size: 3.6rem;
     color: #b3b3b3;
-    /* left: -10%; */
     top: 10%;
     right: 0%;
     z-index: 2; /* Para asegurarse de que los números estén encima del contenido */
@@ -581,7 +559,6 @@ strong {
 
 .slider-img {
   width: 76.4rem;
-  /* height: auto; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -591,20 +568,14 @@ strong {
 }
 
 .project-img img {
-  /* max-width: 100%;
-  min-height: 35rem;  */
   display: block;
   width: 100%;
-  /* width: auto; */
   height: calc(min(350px, 100%));
   height: 35rem;
   image-rendering: auto;
   object-fit: cover;
   object-position: center center;
   border-radius: 5px;
-  /* sizes: calc(min(500px, 100%))-10px; */
-  /* height: calc(min(500px, 100%)); */
-  /* object-fit: cover; */
 }
 
 .description {
@@ -696,7 +667,6 @@ strong {
 .bento-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* gird-template-rows: 1fr 1fr; */
   grid-column-gap: 2rem;
   grid-row-gap: 2rem;
 }
@@ -728,7 +698,7 @@ strong {
   background-color: #dbe0e409;
   background-color: rgba(219, 224, 228, 0.04);
   border: 0.0625rem solid rgba(255, 255, 255, 0.1);
-  border-radius: 2.2rem;
+  border-radius: 22px;
   transition: all 0.7s; 
 }
 
@@ -792,12 +762,9 @@ strong {
     border-color: #595582;
   }
 }
-  
-
 
 .card-main--small {
   min-height: 11.5rem;
-  /* width: 31.5rem; */
   grid-column-gap: 0.5rem;
   grid-row-gap: 0.5rem;
 }
@@ -908,7 +875,7 @@ strong {
   transform: translateX(-50%);
   padding: 8px 12px;
   border: 1px solid transparent;
-  border-radius: 1rem;
+  border-radius: 10px;
   font-size: 1.4rem;
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8); 
@@ -961,12 +928,11 @@ strong {
 }
 
 /* POPUP */
-
 /* Botón para abrir el popup */
 .open-popup-btn {
   padding: 10px 20px;
   background-color: #007bff;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -1004,7 +970,7 @@ strong {
   position: absolute;
   top: -25px;
   right: -5px;
-  font-size: 4.8rem;
+  font-size: 4.4rem;
   color: #fff;
   border: none;
   background: transparent;
@@ -1056,8 +1022,8 @@ strong {
 
 /* Botónes next y prev del carrusel */
 .buttons button {
-  width: 45px; /* Aumentamos el ancho */
-  height: 45px; /* Aumentamos el alto */
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
@@ -1070,8 +1036,8 @@ strong {
 }
 
 .buttons button:hover {
-  background-color: rgba(255, 255, 255, 0.8); /* Cambia de color al pasar el mouse */
-  transform: scale(1.1); /* Aumenta de tamaño al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.8);
+  transform: scale(1.1);
 }
 
 .dots {
@@ -1102,19 +1068,8 @@ strong {
 }
 
 
-
-
 /* @media screen and (max-width: 768px ) {
   .slider {
     height: 400px
   }    
 } */
-
-
-/* 
-- Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-
--- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
-*/
