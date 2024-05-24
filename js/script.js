@@ -2,13 +2,9 @@
 gsap.registerPlugin(CustomEase);
 gsap.registerPlugin(ScrollTrigger);
 
-
-
-
 let slide = 1;
 let pauseSlider = false;
 let progress = 0;
-
 
 // Generar los cuadrados
 const container = document.querySelector('.square-container');
@@ -102,9 +98,6 @@ illuminateAndMoveDown(); // Iniciar el proceso una vez
 setInterval(illuminateAndMoveDown, 2500);
 
 
-
-
-
 // Change Slide Animation
 // Cambiar Slide con retraso y animación
 function changeSlide(id) {
@@ -169,11 +162,7 @@ function startProgressBar() {
         {scaleX: progress / 8, duration: .3});
     },100);
 }
-// startProgressBar();
 
-
-
-// Manejo de Galerías
 // Manejo de Galerías
 let currentIndex = 0;
 let totalImages;
@@ -221,8 +210,6 @@ function updateMainImage(index, imagePaths) {
     openLightbox(imagePaths);
 }
 
-
-// Función para bloquear el scroll al desplazar con la rueda del ratón
 function preventWheelScroll(event) {
     if (document.getElementById('lightbox').style.display === 'flex') {
         event.preventDefault();
@@ -356,7 +343,6 @@ function getImagePaths(button) {
     }
     return imagePaths;
 }
-
 
 // Asociamos el evento de desplazamiento de la rueda del ratón al bloqueo de scroll
 document.addEventListener('wheel', preventWheelScroll, { passive: false });
