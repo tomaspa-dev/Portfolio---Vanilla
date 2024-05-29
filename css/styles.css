@@ -419,9 +419,8 @@ opacity: 0;
 
 .controls {
     position: absolute;
-    right: 8rem;
-    top: 260%;
-    right: 7%;
+    top: 240%;
+    right: 3%;
     transform: translateY(-50%);
     z-index: 3;
 }
@@ -435,8 +434,8 @@ opacity: 0;
 .controls ul li {
     display: block;
     position: relative;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.4rem;
+    height: 2.4rem;
     border-radius: 50%;
     background: #af74e6;
     margin: 3.5rem 0;
