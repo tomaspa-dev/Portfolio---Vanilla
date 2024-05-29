@@ -36,10 +36,6 @@
 /*******************************/
 
 @media (max-width: 75rem) {
-  html {
-    font-size: 56.25%;
-  }   
-  
   .bento-box {
     padding: 2rem 3.6rem;
   }
@@ -56,15 +52,24 @@
     line-height: 1.6;
   }
 
-  .heading-secondary {
-    font-size: 4.4rem;
+  .featured-title {
     font-size: 3.6rem;
-    line-height: 1.1;
+    font-size: 3.0rem;
+    line-height: 1.6;
   }
 
   .big-text {
-    font-size: 4.4rem;
     font-size: 3.6rem;
+    font-size: 3.0rem;
+  }
+
+  .big-text-dev {
+    font-size: 3.0rem;
+    font-size: 2.4rem;
+  }
+
+  .primary-text {
+    font-size: 3.0rem;
   }
 }
 
@@ -72,6 +77,9 @@
 /* BELOW 900px (Tablets)*/
 /*******************************/
 @media (max-width: 56.25rem) {
+  html {
+    font-size: 56.25%;
+  }   
   .container {
     max-width: 120rem;
     max-width: 50%;
@@ -99,43 +107,109 @@
     "exp exp exp exp collaborate collaborate collaborate collaborate";
   }
 
+  .heading-primary {
+    font-size: 5.2rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
   .description-text {
-    font-size: 1.8rem;
     font-size: 1.4rem;
     line-height: 1.6;
   }
 
   .featured-description {
-    font-size: 2.0rem;
-    line-height: 1.6;
-  }
-
-  .featured-title {
-    font-size: 3.6rem;
+    font-size: 1.6rem;
     line-height: 1.6;
   }
 
   .featured-number-one::before,
   .featured-number-two::before {
-      font-size: 3.6rem;
+    font-size: 2.4rem;
+  }
+
+  .featured-title {
+    font-size: 2.4rem;
+    line-height: 1.6;
   }
 
   .big-text {
-    font-size: 4.4rem;
+    font-size: 2.4rem;
   }
 
   .big-text-dev {
-    font-size: 3.6rem;
-  }
-
-  .heading-secondary {
-    font-size: 4.4rem;
-    line-height: 1.1;
+    font-size: 2.0rem;
   }
 
   .featured-secondary {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
     line-height: 1.6;
+  }
+
+  /* HEADER SECTION*/
+  .header {
+    padding-left: 4.4rem;
+    padding-right: 4.4rem;
+  }
+
+  .main-nav-list {
+    gap: 2.4rem;
+  }
+
+  .main-nav-link.nav-cta:link,
+  .main-nav-link.nav-cta:visited {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .logo {
+    font-size: 3.0rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 1.6rem;
+  }
+
+  /* HERO SECTION */
+  .portrait-img img {
+    height: 3.6rem;
+    width: 3.6rem;
+  }
+
+  /* FEATURED SECTION */
+  .featured-slide1, .featured-slide2 {
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: 1fr;
+    grid-template-rows: 6fr 1fr;
+    align-items: start;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .featured-gif-box{
+    max-width: 50%;  
+  }
+
+  .featured-img-box {
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .featured-img-box img {
+    max-width: 35%;
+  }
+
+  /* FOOTER SECTION */
+  .social-links, .tech-links {
+    list-style: none;
+    display: flex;
+    gap: 1.2rem;
   }
 }
 
@@ -159,6 +233,8 @@
   .bento-grid-2 {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
     grid-template-areas: 
     "web"
     "projects"
@@ -166,4 +242,159 @@
     "exp"
     "collaborate";
   } 
+
+  .heading-primary {
+    font-size: 3.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 2.4rem;
+  }
+
+  .heading-tertiary {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    color: #b3b3b3;
+  }
+  
+  .subheading {
+    font-size: 1.4rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 1.4rem;
+  }
+  
+  .social-icon, .tech-icon {
+    height: 3.0rem;
+    width: 3.0rem;
+  }
+
+  /* HEADER SECTION*/
+  .header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  
+  .main-nav-list {
+    gap: 1rem;
+  }
+  
+  .main-nav-link.nav-cta:link,
+  .main-nav-link.nav-cta:visited {
+    padding: 0.4rem 0.4rem;
+  }
+
+  .logo {
+    font-size: 2.4rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 1.4rem;
+  }
+
+  /* HERO SECTION*/
+  .hero-section {
+    padding-top: 4rem;
+  }
+
+  .carousel-text {
+    font-size: 1.8rem;
+  }
+
+  .portrait-img img {
+    height: 3.0rem;
+    width: 3.0rem;
+  }
+
+  .heading-tertiary {
+    font-size: 1.4rem;
+    line-height: 1.1;
+    color: #b3b3b3;
+  }
+  
+  .subheading {
+    font-size: 1.2rem;
+  }
+
+  /* FOOTER SECTION */
+  .copyright {
+    text-align: center;
+  }
+}
+
+/*******************************/
+/* BELOW 400px (Tablets)*/
+/*******************************/
+@media (max-width: 25rem) {
+  .social-icon, .tech-icon {
+    height: 2.4rem;
+    width: 2.4rem;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    font-size: 1.2rem;
+  }
+
+  .description-text {
+    font-size: 1.2rem;
+  }
+  
+
+  /* HEADER SECTION*/
+  .header {
+    padding-left: 2.4rem;
+    padding-right: 2.4rem;
+  }
+
+  .main-nav-list {
+    gap: 0.5rem;
+  }
+
+  .main-nav-link.nav-cta:link,
+  .main-nav-link.nav-cta:visited {
+    padding: 0.3rem 0.3rem;
+  }
+
+  .logo {
+    font-size: 1.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 1.2rem;
+  }
+  
+  /* HERO SECTION */
+  .heading-primary {
+    font-size: 3.0rem;
+  }
+
+  .heading-secondary {
+    font-size: 2rem;
+  }
+  .heading-tertiary {
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: #b3b3b3;
+  }
+  
+  .subheading {
+    font-size: 1.2rem;
+  }
+  
+  /* FOOTER SECTION */
+  .footer-link:link,
+  .footer-link:visited {
+    font-size: 1.4rem;
+  }
+
+  .copyright {
+    font-size: 1.4rem;
+  }
 }
