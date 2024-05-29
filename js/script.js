@@ -168,31 +168,43 @@ let currentIndex = 0;
 let totalImages;
 let currentImagePaths = [];
 
-function openLightbox(imagePaths) {
+// Función para abrir el lightbox en la imagen seleccionada
+function openLightbox(index) {
+    currentIndex = index;
     const lightboxImg = document.getElementById('lightbox-img');
     const thumbnailContainer = document.getElementById('thumbnail-container');
 
-    lightboxImg.src = imagePaths[currentIndex];
+    lightboxImg.src = currentImagePaths[currentIndex];
+    lightboxImg.style.opacity = 0;
+    setTimeout(() => {
+        lightboxImg.style.opacity = 1;
+    }, 10);
 
     thumbnailContainer.innerHTML = '';
 
-    imagePaths.forEach((path, index) => {
+    currentImagePaths.forEach((path, idx) => {
         const thumbnail = document.createElement('img');
         thumbnail.src = path;
-        thumbnail.alt = `Thumbnail ${index + 1}`;
+        thumbnail.alt = `Thumbnail ${idx + 1}`;
         thumbnail.classList.add('thumbnail');
-        if (index === currentIndex) {
+        if (idx === currentIndex) {
             thumbnail.classList.add('active-thumbnail');
         }
-        thumbnail.addEventListener('click', () => updateMainImage(index, imagePaths));
+        thumbnail.addEventListener('click', () => updateMainImage(idx));
         thumbnailContainer.appendChild(thumbnail);
     });
 
     document.getElementById('lightbox').style.display = 'flex';
+    document.body.classList.add('no-scroll'); // Añade la clase no-scroll al abrir el lightbox
+    document.addEventListener('wheel', preventScroll, { passive: false }); // Bloquea el scroll en escritorio
+    document.addEventListener('touchmove', preventScroll, { passive: false }); // Bloquea el scroll en móviles
 }
 
 function closeLightbox() {
     document.getElementById('lightbox').style.display = 'none';
+    document.body.classList.remove('no-scroll'); // Quita la clase no-scroll al cerrar el lightbox
+    document.removeEventListener('wheel', preventScroll); // Permite el scroll en escritorio
+    document.removeEventListener('touchmove', preventScroll); // Permite el scroll en móviles
 }
 
 function changeImage(direction) {
@@ -202,43 +214,48 @@ function changeImage(direction) {
     } else if (currentIndex < 0) {
         currentIndex = currentImagePaths.length - 1;
     }
-    openLightbox(currentImagePaths);
+    updateMainImage(currentIndex);
 }
 
-function updateMainImage(index, imagePaths) {
+function updateMainImage(index) {
+    const lightboxImg = document.getElementById('lightbox-img');
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    thumbnails[currentIndex].classList.remove('active-thumbnail');
     currentIndex = index;
-    openLightbox(imagePaths);
+    lightboxImg.style.opacity = 0;
+    setTimeout(() => {
+        lightboxImg.src = currentImagePaths[currentIndex];
+        lightboxImg.style.opacity = 1;
+    }, 500); // Ajustar el tiempo de espera según sea necesario
+    thumbnails[currentIndex].classList.add('active-thumbnail');
 }
 
-function preventWheelScroll(event) {
-    if (document.getElementById('lightbox').style.display === 'flex') {
-        event.preventDefault();
-    }
-}
-
-//Función para activar la galería con las imágenes en el HTML
-function activateGallery(gallery) {
-    const galleries = document.querySelectorAll('.featured-img-box');
-    galleries.forEach(g => g.classList.remove('active-gallery'));
-    gallery.classList.add('active-gallery');
-
+function activateGallery(gallery, clickedImageIndex) {
     const galleryImages = gallery.querySelectorAll('img');
     currentImagePaths = Array.from(galleryImages).map(img => img.src);
-    openLightbox(currentImagePaths);
+    openLightbox(clickedImageIndex);
 }
 
-// Función para activar la galería con los botones en JavaScript
 function activateGalleryWithButtons(imagePaths) {
     currentImagePaths = imagePaths;
-    openLightbox(imagePaths);
+    openLightbox(currentIndex);
+}
+
+function preventScroll(event) {
+    event.preventDefault();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     const galleries = document.querySelectorAll('.featured-img-box');
     totalImages = galleries[0].querySelectorAll('img').length;
 
-    galleries.forEach(gallery => {
-        gallery.addEventListener('click', () => activateGallery(gallery));
+    galleries.forEach((gallery, index) => {
+        const galleryImages = gallery.querySelectorAll('img');
+        galleryImages.forEach((img, imgIndex) => {
+            img.addEventListener('click', () => {
+                activateGallery(gallery, imgIndex);
+            });
+        });
     });
 
     document.getElementById('close-btn').addEventListener('click', closeLightbox);
@@ -252,9 +269,6 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (e.key === 'ArrowRight') {
                 changeImage(1);
             }
-        }
-
-        if (document.getElementById('lightbox').style.display === 'flex') {
             if (e.key === 'Escape') {
                 closeLightbox();
             }
@@ -344,4 +358,4 @@ function getImagePaths(button) {
 }
 
 // Asociamos el evento de desplazamiento de la rueda del ratón al bloqueo de scroll
-document.addEventListener('wheel', preventWheelScroll, { passive: false });
+document.addEventListener('wheel', preventScroll, { passive: false });
