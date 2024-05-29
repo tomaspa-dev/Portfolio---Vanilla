@@ -1,5 +1,133 @@
-/* @media screen and (max-width: 768px ) {
-  .slider {
-    height: 400px
-  }    
-} */
+/*******************************/
+/* BELOW 1300px (Landscape Tablets)*/
+/*******************************/
+@media (max-width: 81.25rem) {
+  .slider-projects {
+    /* width: calc(76.4rem * 6); */
+    width: calc(55.4rem * 6);
+  }
+
+  .slider-img {
+      /* width: 76.4rem; */
+      width: 55.4rem;
+      padding: 1.6rem;
+      perspective: 10rem;
+  }
+
+  .project-img img {
+    width: 100%;
+    /* height: calc(min(25rem, 100%)); */
+    height: 25rem;
+  }
+
+  @keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-55.4rem * 3));
+    }
+  }
+}
+
+/*******************************/
+/* BELOW 1200px (Tablets)*/
+/*******************************/
+
+@media (max-width: 75rem) {
+  html {
+    font-size: 56.25%;
+  }   
+  
+  .bento-box {
+    padding: 2rem 3.6rem;
+  }
+
+  .description-text {
+    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+
+  .featured-secondary {
+    font-size: 2.4rem;
+    font-size: 2.0rem;
+    line-height: 1.6;
+  }
+
+  .heading-secondary {
+    font-size: 4.4rem;
+    font-size: 3.6rem;
+    line-height: 1.1;
+  }
+
+  .big-text {
+    font-size: 4.4rem;
+    font-size: 3.6rem;
+  }
+
+  .main-grid-four {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+}
+
+/*******************************/
+/* BELOW 900px (Tablets)*/
+/*******************************/
+@media (max-width: 56.25rem) {
+  .container {
+    max-width: 120rem;
+    max-width: 50%;
+    max-width: fit-content;
+  }
+
+  .bento-box {
+    width: 100%;
+    height: 100%;
+    padding: 2.4rem 4rem;
+  }
+
+  .description-text {
+    font-size: 1.8rem;
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+
+  .featured-description {
+    font-size: 2.0rem;
+    line-height: 1.6;
+  }
+
+  .featured-title {
+    font-size: 3.6rem;
+    line-height: 1.6;
+  }
+
+  .featured-number-one::before,
+  .featured-number-two::before {
+      font-size: 3.6rem;
+  }
+
+  .big-text {
+    font-size: 4.4rem;
+  }
+
+  .big-text-dev {
+    font-size: 3.6rem;
+  }
+
+  .heading-secondary {
+    font-size: 4.4rem;
+    line-height: 1.1;
+  }
+
+  .featured-secondary {
+    font-size: 2.4rem;
+    line-height: 1.6;
+  }
+}

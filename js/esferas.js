@@ -12,8 +12,7 @@ this.h = this.container.clientHeight;
 this.material = new THREE.MeshPhysicalMaterial({
 map: this.texture,
 roughness: 0.5,
-transmission: 0.9,
-thickness: 1.0
+transmission: 0.9
 });
 this.geometry = new THREE.SphereGeometry(this.radius / 2, 32, 32);
 this.mesh = new THREE.Mesh(this.geometry, this.material);

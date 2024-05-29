@@ -6,7 +6,7 @@ let slide = 1;
 let pauseSlider = false;
 let progress = 0;
 
-// Generar los cuadrados
+//1 - Generar los cuadrados
 const container = document.querySelector('.square-container');
 const numCols = Math.floor(container.offsetWidth / 60); // Ancho del contenedor dividido entre el tamaño de los cuadrados
 const numRows = Math.floor(container.offsetHeight / 60); // Alto del contenedor dividido entre el tamaño de los cuadrados
@@ -64,7 +64,7 @@ function illuminateAndMoveDown() {
     }, 500);
 }
 
-// Función para iluminar el cuadrado debajo o arriba si existe
+//Función para iluminar el cuadrado debajo o arriba si existe
 function illuminateNextSquare(square, moveDown) {
     const squareSize = 60; // Tamaño del cuadrado en píxeles
     const direction = moveDown ? 'down' : 'up';
@@ -90,15 +90,14 @@ function illuminateNextSquare(square, moveDown) {
         }, 500);
     }
 }
-
 // Iniciar el proceso de iluminación de los cuadrados
 illuminateAndMoveDown(); // Iniciar el proceso una vez
 
-// Establecer intervalo para que el proceso se repita cada 4 segundos
+// Establecer intervalo para que el proceso se repita cada X segundos
 setInterval(illuminateAndMoveDown, 2500);
 
 
-// Change Slide Animation
+//2 - Change Slide Animation
 // Cambiar Slide con retraso y animación
 function changeSlide(id) {
     let slides = document.querySelectorAll(".featured-slide");
@@ -108,7 +107,6 @@ function changeSlide(id) {
 
     let newSlide = document.querySelector(".featured-slide.featured-slide" + id);
     newSlide.classList.add("active");
-
     slide = id;
 
     // Resetear controles a inactivos
@@ -130,14 +128,14 @@ function changeSlide(id) {
     newSlide.querySelector(".featured-text").style.transition = "opacity 1s ease-in-out";
     setTimeout(() => {
         newSlide.querySelector(".featured-text").style.opacity = "1";
-    }, 1500); // Puedes ajustar el tiempo de espera según sea necesario
+    }, 1500); // Ajustar el tiempo de espera según sea necesario
 
     // Aplicar una animación de transición a las imágenes GIF
     let gifBox = newSlide.querySelector(".featured-gif-box");
     gifBox.style.transition = "opacity 1s ease-in-out";
     setTimeout(() => {
         gifBox.style.opacity = "1";
-    }, 1500); // Puedes ajustar el tiempo de espera según sea necesario
+    }, 1500); // Ajustar el tiempo de espera según sea necesario
 }
 
 // Agregar eventos de clic a los controles derechos
@@ -148,6 +146,8 @@ for (let i = 0; i < controls.length; i++){
     });
 }
 
+
+// Barra de progreso sin uso
 function startProgressBar() {
     setInterval(() => {
         if(pauseSlider) return;
@@ -163,7 +163,7 @@ function startProgressBar() {
     },100);
 }
 
-// Manejo de Galerías
+//3 - Manejo de Galerías
 let currentIndex = 0;
 let totalImages;
 let currentImagePaths = [];
@@ -216,7 +216,7 @@ function preventWheelScroll(event) {
     }
 }
 
-// Función para activar la galería con las imágenes en el HTML
+//Función para activar la galería con las imágenes en el HTML
 function activateGallery(gallery) {
     const galleries = document.querySelectorAll('.featured-img-box');
     galleries.forEach(g => g.classList.remove('active-gallery'));
@@ -262,9 +262,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Bloque de Efectos
+//4 - Bloque de Efectos
 const actionButtons = document.querySelectorAll('.toggle');
-
 actionButtons.forEach(button => {
     button.addEventListener('click', () => {
         button.disabled = true; // Desactiva el botón

@@ -43,11 +43,11 @@ Large: 1.8
 - Greys:
 #888
 #999
+#a0a0a0
 #b3b3b3
 #ccc
 #e6e6e6
 #9ba1a6
-
 
 --- 05 SHADOWS
 0 0 2.5rem rgba(0, 0, 0, 0.8);
@@ -86,7 +86,6 @@ body {
   color: #e6e6e6;
   background-color: #161616;
 }
-
 
 /*******************************/
 /* GENERAL REUSABLE COMPONENTS*/
@@ -185,7 +184,6 @@ body {
   color: #888;
 }
 
-
 /*******************************/
 /* HELPER/SETTINGS CLASSES */
 /*******************************/
@@ -206,7 +204,7 @@ body {
 }
 
 .margin-bottom-md-large {
-  margin-bottom: 6rem !important;
+  margin-bottom: 8rem !important;
 }
 
 .margin-bottom-large {
