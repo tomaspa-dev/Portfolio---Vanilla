@@ -66,14 +66,6 @@
     font-size: 4.4rem;
     font-size: 3.6rem;
   }
-
-  .main-grid-four {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-  }
 }
 
 /*******************************/
@@ -86,10 +78,25 @@
     max-width: fit-content;
   }
 
-  .bento-box {
-    width: 100%;
-    height: 100%;
-    padding: 2.4rem 4rem;
+  .bento-grid-1 {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "about about about about about resume resume resume"
+    "about about about about about resume resume resume"
+    "about about about about about projects projects projects"
+    "about about about about about projects projects projects"
+    "stack stack stack stack stack exp exp exp";
+  }
+
+  .bento-grid-2 {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "projects projects projects projects collaborate collaborate collaborate collaborate"
+    "web web web web collaborate collaborate collaborate collaborate"
+    "clients clients clients clients collaborate collaborate collaborate collaborate"
+    "exp exp exp exp collaborate collaborate collaborate collaborate";
   }
 
   .description-text {
@@ -130,4 +137,33 @@
     font-size: 2.4rem;
     line-height: 1.6;
   }
+}
+
+/*******************************/
+/* BELOW 600px (Tablets)*/
+/*******************************/
+@media (max-width: 37.5rem) {
+  .bento-grid-1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+    "resume"
+    "about"
+    "projects"
+    "exp"
+    "stack";
+  }
+
+  .bento-grid-2 {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "web"
+    "projects"
+    "clients"
+    "exp"
+    "collaborate";
+  } 
 }

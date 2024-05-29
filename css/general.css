@@ -238,7 +238,10 @@ body {
 
 .one-column {
   display: flex;
-  gap: 2rem;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 strong {

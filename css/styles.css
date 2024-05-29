@@ -651,25 +651,11 @@ opacity: 0;
 }
 
 /* ABOUT AND SOCIAL-PROOF SECTION */
-.bento-grid {
+.bento-grid-1, .bento-grid-2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-}
-
-.main-grid-two {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-}
-
-.main-grid-four {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    max-width: 120rem;
+    /* grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; */
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
 }
@@ -694,6 +680,76 @@ opacity: 0;
     border-color: #b985e9;
     animation: blink 1.8s linear infinite;
 }
+
+.bento-grid-1 .bento-box:nth-child(1) {
+    grid-area: about;
+}
+.bento-grid-1 .bento-box:nth-child(2) {
+    grid-area: resume;
+}
+.bento-grid-1 .bento-box:nth-child(3) {
+    grid-area: projects;
+}
+.bento-grid-1 .bento-box:nth-child(4) {
+    grid-area: exp;
+}
+.bento-grid-1 .bento-box:nth-child(5) {
+    grid-area: stack;
+}
+
+.bento-grid-2 .bento-box:nth-child(1) {
+    grid-area: projects;
+}
+.bento-grid-2 .bento-box:nth-child(2) {
+    grid-area: web;
+}
+.bento-grid-2 .bento-box:nth-child(3) {
+    grid-area: clients;
+}
+.bento-grid-2 .bento-box:nth-child(4) {
+    grid-area: exp;
+}
+.bento-grid-2 .bento-box:nth-child(5) {
+    grid-area: collaborate;
+}
+
+.bento-grid-1 {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "about about about about resume resume resume resume"
+    "about about about about resume resume resume resume"
+    "about about about about projects projects exp exp"
+    "about about about about stack stack stack stack"
+    "about about about about stack stack stack stack";
+}
+
+.bento-grid-2 {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "projects projects web web collaborate collaborate collaborate collaborate"
+    "projects projects web web collaborate collaborate collaborate collaborate"
+    "clients clients exp exp collaborate collaborate collaborate collaborate"
+    "clients clients exp exp collaborate collaborate collaborate collaborate";
+}
+
+
+/* .main-grid-two {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+} */
+
+/* .main-grid-four {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+} */
 
 @keyframes blink {
     0%{
@@ -751,7 +807,7 @@ opacity: 0;
 }
 
 .card-main--small {
-    min-height: 11.5rem;
+    /* min-height: 11.5rem; */
     grid-column-gap: 0.5rem;
     grid-row-gap: 0.5rem;
 }
