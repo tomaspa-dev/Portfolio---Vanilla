@@ -34,7 +34,6 @@
 /*******************************/
 /* BELOW 1200px (Tablets)*/
 /*******************************/
-
 @media (max-width: 75rem) {
   .bento-box {
     padding: 2rem 3.6rem;
@@ -70,6 +69,12 @@
 
   .primary-text {
     font-size: 3.0rem;
+  }
+
+  .featured-number-one::before,
+  .featured-number-two::before {
+    top: 1%;
+    right: 0%;
   }
 }
 
@@ -140,7 +145,11 @@
   }
 
   .heading-secondary {
-    font-size: 3.6rem;
+    font-size: 4.0rem;
+  }
+
+  .heading-tertiary {
+    font-size: 1.8rem;
   }
 
   .description-text {
@@ -180,6 +189,7 @@
   .header {
     padding-left: 4.4rem;
     padding-right: 4.4rem;
+    padding-top: 2.6rem;
   }
 
   .main-nav-list {
@@ -202,19 +212,19 @@
 
   /* HERO SECTION */
   .portrait-img img {
-    height: 3.6rem;
-    width: 3.6rem;
+    height: 4.6rem;
+    width: 4.6rem;
   }
 
-  .controls {
-    top: 190%;
-    right: 23%;
-  }
+  /* .controls {
+    top: 50%;
+    left: 3vw;
+  } */
 
   .featured-number-one::before,
   .featured-number-two::before {
-    top: 10%;
-    right: 50%;
+    top: 1%;
+    right: 20%;
   }
 
   /* FEATURED SECTION */
@@ -229,7 +239,7 @@
   }
 
   .featured-gif-box{
-    max-width: 50%;  
+    max-width: 80%;  
   }
 
   .featured-img-box {
@@ -310,15 +320,15 @@
   } 
 
   .heading-primary {
-    font-size: 3.6rem;
+    font-size: 4.0rem;
   }
 
   .heading-secondary {
-    font-size: 2.4rem;
+    font-size: 3.0rem;
   }
 
   .heading-tertiary {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     line-height: 1.1;
     color: #b3b3b3;
   }
@@ -343,6 +353,7 @@
   .header {
     padding-left: 3rem;
     padding-right: 3rem;
+    padding-top: 3.6rem;
   }
   
   .main-nav-list {
@@ -365,7 +376,7 @@
 
   /* HERO SECTION*/
   .hero-section {
-    padding-top: 12rem;
+    padding-top: 9rem;
   }
 
   .carousel-text {
@@ -373,8 +384,8 @@
   }
 
   .portrait-img img {
-    height: 3.0rem;
-    width: 3.0rem;
+    height: 4.0rem;
+    width: 4.0rem;
   }
 
   .heading-tertiary {
@@ -387,10 +398,10 @@
     font-size: 1.2rem;
   }
 
-  .controls {
-    top: 175%;
-    right: 23.5%;
-  }
+  /* .controls {
+    top: 50%;
+    left: 3vw;
+  } */
 
   .featured-number-one::before,
   .featured-number-two::before {
@@ -460,7 +471,7 @@
 
   .main-nav-link:link,
   .main-nav-link:visited {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   /* HERO SECTION */
@@ -469,7 +480,7 @@
   }
 
   .heading-secondary {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
   .heading-tertiary {
     font-size: 1.2rem;

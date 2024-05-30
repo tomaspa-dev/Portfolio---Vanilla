@@ -6,7 +6,7 @@ let slide = 1;
 let pauseSlider = false;
 let progress = 0;
 
-//1 - Generar los cuadrados
+// 1 - Generar los cuadrados
 const container = document.querySelector('.square-container');
 const numCols = Math.floor(container.offsetWidth / 60); // Ancho del contenedor dividido entre el tamaño de los cuadrados
 const numRows = Math.floor(container.offsetHeight / 60); // Alto del contenedor dividido entre el tamaño de los cuadrados
@@ -64,7 +64,7 @@ function illuminateAndMoveDown() {
     }, 500);
 }
 
-//Función para iluminar el cuadrado debajo o arriba si existe
+// Función para iluminar el cuadrado debajo o arriba si existe
 function illuminateNextSquare(square, moveDown) {
     const squareSize = 60; // Tamaño del cuadrado en píxeles
     const direction = moveDown ? 'down' : 'up';
@@ -76,7 +76,7 @@ function illuminateNextSquare(square, moveDown) {
 
     // Calcular la posición del cuadrado debajo o arriba
     const newTop = moveDown ? currentTop + squareSize : currentTop - squareSize;
-    
+
     // Encontrar el cuadrado debajo o arriba si existe
     const newSquare = document.elementFromPoint(currentLeft + squareSize / 2, newTop + squareSize / 2);
     if (newSquare && newSquare.classList.contains('square')) {
@@ -96,8 +96,7 @@ illuminateAndMoveDown(); // Iniciar el proceso una vez
 // Establecer intervalo para que el proceso se repita cada X segundos
 setInterval(illuminateAndMoveDown, 2500);
 
-
-//2 - Change Slide Animation
+// 2 - Change Slide Animation
 // Cambiar Slide con retraso y animación
 function changeSlide(id) {
     let slides = document.querySelectorAll(".featured-slide");
@@ -146,7 +145,6 @@ for (let i = 0; i < controls.length; i++){
     });
 }
 
-
 // Barra de progreso sin uso
 function startProgressBar() {
     setInterval(() => {
@@ -157,13 +155,13 @@ function startProgressBar() {
             changeSlide((slide % 4) + 1);
             progress = 0;        
         }
-        
+
         gsap.to(".slideProgress", 
         {scaleX: progress / 8, duration: .3});
     },100);
 }
 
-//3 - Manejo de Galerías
+// 3 - Manejo de Galerías
 let currentIndex = 0;
 let totalImages;
 let currentImagePaths = [];
@@ -220,13 +218,18 @@ function changeImage(direction) {
 function updateMainImage(index) {
     const lightboxImg = document.getElementById('lightbox-img');
     const thumbnails = document.querySelectorAll('.thumbnail');
-    thumbnails[currentIndex].classList.remove('active-thumbnail');
+
+    // Eliminar la clase activa de todas las miniaturas
+    thumbnails.forEach(thumbnail => thumbnail.classList.remove('active-thumbnail'));
+
     currentIndex = index;
     lightboxImg.style.opacity = 0;
     setTimeout(() => {
         lightboxImg.src = currentImagePaths[currentIndex];
         lightboxImg.style.opacity = 1;
     }, 500); // Ajustar el tiempo de espera según sea necesario
+
+    // Añadir la clase activa a la miniatura actual
     thumbnails[currentIndex].classList.add('active-thumbnail');
 }
 
@@ -276,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//4 - Bloque de Efectos
+// 4 - Bloque de Efectos
 const actionButtons = document.querySelectorAll('.toggle');
 actionButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -356,6 +359,3 @@ function getImagePaths(button) {
     }
     return imagePaths;
 }
-
-// Asociamos el evento de desplazamiento de la rueda del ratón al bloqueo de scroll
-document.addEventListener('wheel', preventScroll, { passive: false });
