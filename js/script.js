@@ -6,6 +6,38 @@ let slide = 1;
 let pauseSlider = false;
 let progress = 0;
 
+// 0 - Generar menú en mobiles
+const btnNavEl = document.querySelector(".nav-menu-btn");
+const headerEl = document.querySelector(".header");
+const allLinks = document.querySelectorAll("a:link");
+
+btnNavEl.addEventListener("click", function() {
+    headerEl.classList.toggle("nav-open");
+});
+
+allLinks.forEach(function(link) {
+    link.addEventListener("click", function (e){
+        e.preventDefault();
+        const href = link.getAttribute("href");
+
+        if (href === "#")
+            window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+        });
+
+        if (href !== "#" && href.startsWith("#")) {
+            const sectionEl = document.querySelector(href);
+            sectionEl.scrollIntoView({ behavior: "smooth" });
+        }
+
+        //cerrar el menu de navegacion
+        if (link.classList.contains("main-nav-link"))
+            headerEl.classList.toggle("nav-open");
+    });
+});
+
+
 // 1 - Generar los cuadrados
 const container = document.querySelector('.square-container');
 const numCols = Math.floor(container.offsetWidth / 60); // Ancho del contenedor dividido entre el tamaño de los cuadrados

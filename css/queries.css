@@ -465,13 +465,55 @@
     padding: 0.3rem 0.3rem;
   }
 
-  .logo {
-    font-size: 1.8rem;
+  /** MOBILE **/
+  .nav-menu-btn {
+    display: block;
+    z-index: 11;
+  }
+
+  .main-nav-header {
+    background-color: rgb(255,255,255,0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    transform: translateX(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* hide nav */
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    z-index: 10;
+  }
+
+  .nav-open .main-nav-header {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-menu-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-menu-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 3.2rem;
   }
 
   .main-nav-link:link,
   .main-nav-link:visited {
-    font-size: 1rem;
+    font-size: 3.6rem;
   }
   
   /* HERO SECTION */
