@@ -17,26 +17,29 @@ btnNavEl.addEventListener("click", function() {
 
 allLinks.forEach(function(link) {
     link.addEventListener("click", function (e){
-        e.preventDefault();
         const href = link.getAttribute("href");
 
-        if (href === "#")
-            window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-        });
+        // Manejar la navegación interna suavemente
+        if (href.startsWith("#")) {
+            e.preventDefault();
 
-        if (href !== "#" && href.startsWith("#")) {
-            const sectionEl = document.querySelector(href);
-            sectionEl.scrollIntoView({ behavior: "smooth" });
+            if (href === "#") {
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth",
+                });
+            } else {
+                const sectionEl = document.querySelector(href);
+                sectionEl.scrollIntoView({ behavior: "smooth" });
+            }
+
+            // Cerrar el menú de navegación
+            if (link.classList.contains("main-nav-link")) {
+                headerEl.classList.toggle("nav-open");
+            }
         }
-
-        //cerrar el menu de navegacion
-        if (link.classList.contains("main-nav-link"))
-            headerEl.classList.toggle("nav-open");
     });
 });
-
 
 // 1 - Generar los cuadrados
 const container = document.querySelector('.square-container');
