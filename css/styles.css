@@ -109,6 +109,13 @@
     display: none;
 }
 
+/* Evitar scroll cuando el menú está abierto */
+body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
 
 /* HERO SECTION */
 .scroll-down {

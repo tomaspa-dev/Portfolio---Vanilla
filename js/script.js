@@ -9,19 +9,25 @@ let progress = 0;
 // 0 - Generar menú en mobiles
 const btnNavEl = document.querySelector(".nav-menu-btn");
 const headerEl = document.querySelector(".header");
+const bodyEl = document.querySelector("body");
 const allLinks = document.querySelectorAll("a:link");
 
 btnNavEl.addEventListener("click", function() {
     headerEl.classList.toggle("nav-open");
+    bodyEl.classList.toggle("nav-open");
 });
 
 allLinks.forEach(function(link) {
-    link.addEventListener("click", function (e){
+    link.addEventListener("click", function (e) {
         const href = link.getAttribute("href");
 
         // Manejar la navegación interna suavemente
         if (href.startsWith("#")) {
             e.preventDefault();
+
+            // Habilitar scroll temporalmente para permitir la navegación
+            bodyEl.classList.remove("nav-open");
+            headerEl.classList.remove("nav-open");
 
             if (href === "#") {
                 window.scrollTo({
@@ -32,14 +38,10 @@ allLinks.forEach(function(link) {
                 const sectionEl = document.querySelector(href);
                 sectionEl.scrollIntoView({ behavior: "smooth" });
             }
-
-            // Cerrar el menú de navegación
-            if (link.classList.contains("main-nav-link")) {
-                headerEl.classList.toggle("nav-open");
-            }
         }
     });
 });
+
 
 // 1 - Generar los cuadrados
 const container = document.querySelector('.square-container');
