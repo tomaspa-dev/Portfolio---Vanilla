@@ -362,7 +362,7 @@
   
   .main-nav-link.nav-cta:link,
   .main-nav-link.nav-cta:visited {
-    padding: 0.4rem 0.4rem;
+    padding: 0.4rem 0.6rem;
   }
 
   .logo {
@@ -458,11 +458,6 @@
 
   .main-nav-list {
     gap: 0.5rem;
-  }
-
-  .main-nav-link.nav-cta:link,
-  .main-nav-link.nav-cta:visited {
-    padding: 0.3rem 0.3rem;
   }
 
   /** MOBILE **/
