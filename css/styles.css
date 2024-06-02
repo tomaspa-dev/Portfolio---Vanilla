@@ -119,6 +119,7 @@ body.nav-open {
 
 /* HERO SECTION */
 .hero-h1 {
+    font-family: "Paytone One", sans-serif;
     background-image: url(
         https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDlpcDRiczg2MmFuem1saDdlbTh1OGMyenhtZGVlajhlMnBpOHlwciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fHbNKwyC19ysE/giphy.gif);
     background-image: url(https://media2.giphy.com/media/HkEDr0jVekaZO/giphy.gif?cid=790b761…&ct=g&rid=giphy.gif);
@@ -126,7 +127,16 @@ body.nav-open {
     color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;    
+    background-clip: text; 
+}
+
+.heading-primary-header {
+    font-size: 7.4rem;
+}
+
+.heading-secondary-header {
+    font-size: 5.2rem;
+    color: #ccc;
 }
 
 .scroll-down {

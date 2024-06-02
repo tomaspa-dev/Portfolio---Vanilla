@@ -396,3 +396,5 @@ function getImagePaths(button) {
     }
     return imagePaths;
 }
+
+// 5 - Efectos, Animaciones en texto
