@@ -418,6 +418,10 @@
     padding: 2rem;
   }
 
+  .tag {
+    font-size: 1rem;
+  }
+
   /* FOOTER SECTION */
   .copyright {
     text-align: center;
@@ -523,9 +527,6 @@
     font-size: 1.2rem;
   }
 
-  .tag {
-    font-size: 1rem;
-  }
   
   /* FOOTER SECTION */
   .footer-link:link,
