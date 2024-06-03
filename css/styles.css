@@ -382,6 +382,16 @@ opacity: 0;
 }
 
 /* FEATURED SECTION */
+.featured-section {
+    overflow: hidden;
+}
+
+.featured-wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
 .featured-title {
     font-size: 3.6rem;
     line-height: 1.6;
@@ -519,7 +529,7 @@ opacity: 0;
 .controls {
     position: absolute;
     top: 0%;
-    right: 0%;
+    right: 4%;
     z-index: 3;
 }
 
@@ -532,8 +542,8 @@ opacity: 0;
 .controls ul li {
     display: block;
     position: relative;
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     background: #af74e6;
     margin: 3.5rem 0;
@@ -544,7 +554,7 @@ opacity: 0;
     content: "";
     display: block;
     border: 2px solid #a562e3;
-    padding: 2.4rem;
+    padding: 1.6rem;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -808,7 +818,7 @@ opacity: 0;
     width: calc(100% + var(--borderWidth)/3);
     background: linear-gradient(60deg, #b985e9, #e1cbf6, #ef4e7b, #5d3186, #c397ec);
     border-radius: calc(1 * var(--borderWidth));
-    z-index: -1;
+    z-index: -11;
     animation: shine-gradient 3s ease alternate infinite;
     background-size: 300% 300%;
     opacity: 0;
@@ -990,6 +1000,7 @@ opacity: 0;
     width: 3rem;
     height: 3rem;
     color: #9b51e0;
+    flex-shrink: 0;
 }
 
 .big-text {
@@ -1159,4 +1170,15 @@ opacity: 0;
 
 .tech-link {
     position: relative;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
 }

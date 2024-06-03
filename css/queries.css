@@ -522,6 +522,10 @@
   .subheading {
     font-size: 1.2rem;
   }
+
+  .tag {
+    font-size: 1rem;
+  }
   
   /* FOOTER SECTION */
   .footer-link:link,
