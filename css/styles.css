@@ -16,6 +16,13 @@
     font-size: 3.6rem;
 }
 
+.logotext {
+    font-family: "Lobster";
+    font-weight: 400;
+    font-size: 80.6rem;
+
+}
+
 .logo-link:link,
 .logo-link:visited {
     text-decoration: none;
