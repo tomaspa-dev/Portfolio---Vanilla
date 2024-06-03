@@ -340,7 +340,6 @@
   .btn,
   .btn:link,
   .btn:visited {
-    padding: 0.6rem 0.8rem;
     font-size: 1.4rem;
   }
   
@@ -417,11 +416,6 @@
 
   .controls ul li::before {
     padding: 2rem;
-  }
-
-  .tag {
-    padding: 0.4rem 0.8rem;
-    font-size: 1rem;
   }
 
   /* FOOTER SECTION */

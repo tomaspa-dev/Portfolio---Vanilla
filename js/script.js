@@ -398,3 +398,64 @@ function getImagePaths(button) {
 }
 
 // 5 - Efectos, Animaciones en texto
+document.querySelector(".btn-effect").addEventListener("mouseover", () => {
+    if (document.querySelector(".btn-effect").classList.contains('confetti-triggered')) {
+        return;
+    }
+
+    document.querySelector(".btn-effect").classList.add('confetti-triggered');
+
+    confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#9b51e0', '#595582', '#af74e6', '#c397ec', '#d7b9f3']
+    });
+
+    setTimeout(() => {
+        document.querySelector(".btn-effect").classList.remove('confetti-triggered');
+    }, 2000); // Ajuste la frecuencia con la que se puede activar el confeti.
+});
+
+document.querySelector(".btn-downl").addEventListener("mouseover", () => {
+    if (document.querySelector(".btn-downl").classList.contains('confetti-triggered')) {
+        return;
+    }
+
+    document.querySelector(".btn-downl").classList.add('confetti-triggered');
+
+    let defaults = {
+        spread: 360,
+        ticks: 30,
+        gravity: 0,
+        decay: 0.94,
+        startVelocity: 30,
+        colors: ['#9b51e0', '#595582', '#af74e6', '#c397ec', '#d7b9f3']
+    };
+
+    function shoot() {
+        confetti({
+            ...defaults,
+            particleCount: 20,
+            scalar: 1.5,
+            shapes: ['star']
+        });
+        
+    
+        confetti({
+            ...defaults,
+            particleCount: 10,
+            scalar: 0.75,
+            shapes: ['circle']
+        });
+    }
+
+    setTimeout(shoot, 0);
+    setTimeout(shoot, 100);
+    setTimeout(shoot, 200);
+
+    setTimeout(() => {
+        document.querySelector(".btn-downl").classList.remove('confetti-triggered');
+    }, 2000); // Ajuste la frecuencia con la que se puede activar el confeti.
+});
+
