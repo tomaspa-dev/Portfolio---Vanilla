@@ -459,19 +459,54 @@ document.querySelector(".btn-downl").addEventListener("mouseover", () => {
     }, 2000); // Ajuste la frecuencia con la que se puede activar el confeti.
 });
 
+
+
+
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const observer = new IntersectionObserver((entries, observer) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('visible');
+//                 observer.unobserve(entry.target); // Deja de observar el elemento una vez que es visible
+//             } else {
+//                 entry.target.classList.remove('visible');
+//             }
+//         });
+//     }, { threshold: 0.1 });
+
+//     // Selecciona todos los elementos que quieres observar
+//     const bentoBoxes = document.querySelectorAll('.hidden');
+//     bentoBoxes.forEach(box => {
+//         observer.observe(box);
+//     });
+// });
+
 document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                if (entry.target.classList.contains('hidden')) {
+                    entry.target.classList.add('visible');
+                }
+                if (entry.target.classList.contains('hidden-stack')) {
+                    entry.target.classList.add('visible-stack');
+                }
                 observer.unobserve(entry.target); // Deja de observar el elemento una vez que es visible
+            } else {
+                if (entry.target.classList.contains('hidden')) {
+                    entry.target.classList.remove('visible');
+                }
+                if (entry.target.classList.contains('hidden-stack')) {
+                    entry.target.classList.remove('visible-stack');
+                }
             }
         });
     }, { threshold: 0.1 });
 
     // Selecciona todos los elementos que quieres observar
-    const bentoBoxes = document.querySelectorAll('.hidden');
-    bentoBoxes.forEach(box => {
-        observer.observe(box);
+    const elementsToObserve = document.querySelectorAll('.hidden, .hidden-stack');
+    elementsToObserve.forEach(element => {
+        observer.observe(element);
     });
 });
