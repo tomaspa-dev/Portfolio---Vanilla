@@ -390,7 +390,7 @@ actionButtons.forEach(button => {
 function getImagePaths(button) {
     let imagePaths = [];
     if (button.classList.contains('btn-1')) {
-        imagePaths = ["/img/VideoGame-001.webp", "/img/VideoGame-002.webp", "/img/VideoGame-003.webp"];
+        imagePaths = ["/img/video1.webp", "/img/video2.webp", "/img/video3.webp", "/img/video5.webp", "/img/video4.webp"];
     } else if (button.classList.contains('btn-2')) {
         imagePaths = ["/img/CaseStudy1.webp", "/img/Colors.webp", "/img/TypeScale.webp"];
     }
