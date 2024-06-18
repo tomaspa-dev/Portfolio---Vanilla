@@ -392,7 +392,7 @@ function getImagePaths(button) {
     if (button.classList.contains('btn-1')) {
         imagePaths = ["/img/VideoGame-001.webp", "/img/VideoGame-002.webp", "/img/VideoGame-003.webp"];
     } else if (button.classList.contains('btn-2')) {
-        imagePaths = ["/img/port-1.webp", "/img/port-2.webp", "/img/port-3.webp"];
+        imagePaths = ["/img/CaseStudy1.webp", "/img/Colors.webp", "/img/TypeScale.webp"];
     }
     return imagePaths;
 }

@@ -27,22 +27,32 @@ calm/peaceful - For products and services that care about the consumer, which  i
 greens, blues.
 
 ### tipografia
-"Poppins", sans-serif;
+"Rubik", sans-serif;
 
 ### escala
 - Font sizes (px)
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 42 / 52 / 62 / 74 / 86 / 90 / 96 / 100
 
 -- Spacing system (px)
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+4 / 6 / 12 / 24 / 36 / 48 / 60 / 72 / 84 / 96 / 120 
 
 ### colores
 - Background:
 Orange - 
 #f1f1cf
+#fff
 
 - Primary: 
-00 10 20 40 60 80
+50  - #edeae9
+100 - #c6bdba
+200 - #917f79
+300 - #7e6a63
+400 - #6c554d
+500 - #472a20
+600 - #41261d
+700 - #321e17
+800 - #271712
+900 - #1e120d
 
 Orange - 
 #472a20
@@ -57,14 +67,34 @@ Orange -
 
 - Accents:
 - Orange 4
-#e2ac20
+50  - #fcf7e9
+100 - #f6e5ba
+200 - #f2d998
+300 - #ecc76a
+400 - #e8bd4d
+500 - #e2ac20
+600 - #ce9d1d
+700 - #a07a17
+800 - #7c5f12
+900 - #5f480d
 
+#e2ac20
 - Greys
+50  - #fff
+100 - #e6e6e6
+200 - #ccc
+300 - #b3b3b3
+400 - #999
+500 - #888
+600 - #666
+700 - #555
+800 - #333
+900 - #191919
+950 - #000
+
 #888 (footer)
 #555
 #333
-
-
 
 ### iconos
 ### elementos
