@@ -6,7 +6,7 @@ let slide = 1;
 let pauseSlider = false;
 let progress = 0;
 
-// 0 - Generar menú en mobiles
+// 0 - Generar menú en móviles
 const btnNavEl = document.querySelector(".nav-menu-btn");
 const headerEl = document.querySelector(".header");
 const bodyEl = document.querySelector("body");
@@ -20,9 +20,10 @@ btnNavEl.addEventListener("click", function() {
 allLinks.forEach(function(link) {
     link.addEventListener("click", function (e) {
         const href = link.getAttribute("href");
+        console.log(`Enlace clicado: ${href}`);
 
-        // Manejar la navegación interna suavemente
-        if (href.startsWith("#")) {
+        // Excluir enlaces que abren la galería de imágenes
+        if (href && href.startsWith("#") && href !== "#popup" && href !== "#popup-icecream-shop") {
             e.preventDefault();
 
             // Habilitar scroll temporalmente para permitir la navegación
@@ -36,10 +37,38 @@ allLinks.forEach(function(link) {
                 });
             } else {
                 const sectionEl = document.querySelector(href);
-                sectionEl.scrollIntoView({ behavior: "smooth" });
+                if (sectionEl) {
+                    sectionEl.scrollIntoView({ behavior: "smooth" });
+                } else {
+                    console.error(`No se pudo encontrar el elemento para el selector: ${href}`);
+                }
             }
         }
     });
+});
+
+// Código para manejar la apertura de la galería de imágenes
+const openPopupBtns = document.querySelectorAll(".open-popup-btn");
+const popup = document.getElementById("popup");
+const closePopupBtn = document.getElementById("close-btn");
+
+openPopupBtns.forEach(function(btn) {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        const targetPopup = document.querySelector(btn.getAttribute("href"));
+        if (targetPopup) {
+            targetPopup.style.display = "block";
+            bodyEl.style.overflow = "hidden"; // Inmovilizar el scroll
+        }
+    });
+});
+
+closePopupBtn.addEventListener("click", function() {
+    const openPopups = document.querySelectorAll(".lightbox[style*='display: block']");
+    openPopups.forEach(function(popup) {
+        popup.style.display = "none";
+    });
+    bodyEl.style.overflow = "auto"; // Activar el scroll
 });
 
 
@@ -390,10 +419,11 @@ actionButtons.forEach(button => {
 function getImagePaths(button) {
     let imagePaths = [];
     if (button.classList.contains('btn-1')) {
-        imagePaths = ["/img/video1.webp", "/img/video2.webp", "/img/video3.webp", "/img/video5.webp", "/img/video4.webp"];
+        imagePaths = ["/img/video1.webp", "/img/video2.webp", "/img/video3.webp", "/img/video6.webp", "/img/video5.webp"];
     } else if (button.classList.contains('btn-2')) {
         imagePaths = ["/img/CaseStudy1.webp", "/img/Colors.webp", "/img/TypeScale.webp"];
     }
+    
     return imagePaths;
 }
 
