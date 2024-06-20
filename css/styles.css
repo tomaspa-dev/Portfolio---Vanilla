@@ -355,7 +355,7 @@ opacity: 0;
     text-align: center;
 }
 
-.project-img img {
+.project-img img  {
     display: block;
     width: 100%;
     height: calc(min(350px, 100%));
@@ -364,6 +364,12 @@ opacity: 0;
     object-fit: cover;
     object-position: center center;
     border-radius: 5px;
+}
+
+.slider-video {
+    display: block;
+    width: 100%;
+    height: 35rem;
 }
 
 @keyframes scroll {

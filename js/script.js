@@ -1,7 +1,3 @@
-// Registro de plugins GSAP
-gsap.registerPlugin(CustomEase);
-gsap.registerPlugin(ScrollTrigger);
-
 let slide = 1;
 let pauseSlider = false;
 let progress = 0;
@@ -211,21 +207,6 @@ for (let i = 0; i < controls.length; i++){
     });
 }
 
-// Barra de progreso sin uso
-function startProgressBar() {
-    setInterval(() => {
-        if(pauseSlider) return;
-        progress += .1;
-
-        if(progress >= 8) {
-            changeSlide((slide % 4) + 1);
-            progress = 0;        
-        }
-
-        gsap.to(".slideProgress", 
-        {scaleX: progress / 8, duration: .3});
-    },100);
-}
 
 // 3 - Manejo de Galerías
 let currentIndex = 0;

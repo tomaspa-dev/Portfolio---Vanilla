@@ -9,19 +9,20 @@
     <link rel="icon" href="img/favicon.ico" />
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preload" href="/css/general.css" as="style">
+    <link rel="preload" href="/css/styles.css" as="style">
+    <link rel="preload" href="/css/queries.css" as="style">
     <link rel="stylesheet" href="/css/general.css">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/queries.css">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- <script type="module" src="https://unpkg.com/rough-notation?module"></script> -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
-    <script type="module" defer src="/js/script.js"></script>
+    <script rel="preconnect" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script rel="preconnect"
+        src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
     <script type="module" defer src="/js/esferas.js"></script>
+    <script type="module" defer src="/js/script.js"></script>
     <title>Portfolio &mdash; Freelance Web Developer</title>
 </head>
 
@@ -79,7 +80,9 @@
             <div class="slider-projects">
                 <div class="slider-img">
                     <div class="project-img margin-bottom-sm">
-                        <img src="/img/Omicron-gif.gif" alt="Project Omicron Videogame">
+                        <video muted loop autoplay playsinline poster class="slider-img project-img slider-video">
+                            <source src="/img/Omicron.webm" type="video/webm">
+                        </video>
                     </div>
                     <div class="description">
                         <p class="carousel-text">Video Game</p>
@@ -110,7 +113,10 @@
                 <!-- Duplicate Images Slide -->
                 <div class="slider-img">
                     <div class="project-img margin-bottom-sm">
-                        <img src="/img/Omicron-gif.gif" alt="Project">
+                        <video muted loop autoplay playsinline poster class="slider-img project-img slider-video">
+                            <source src="/img/Omicron.webm" type="video/webm">
+                            <source src="/img/Omicron.mp4" type="video/mp4">
+                        </video>
                     </div>
                     <div class="description">
                         <p class="carousel-text">Video Game</p>
@@ -164,8 +170,11 @@
                                 <p class="primary-text featured-title featured-number-one">Omicron Endless War
                                 </p>
                             </div>
-                            <div class=" featured-gif-box">
-                                <img class="featured-img-gif" src="/img/Omicron-gif.gif" alt="Project Omicron">
+                            <div class="featured-gif-box">
+                                <video muted loop autoplay playsinline poster class="featured-gif-box featured-img-gif">
+                                    <source src="/img/Omicron.webm" type="video/webm">
+                                    <source src="/img/Omicron.mp4" type="video/mp4">
+                                </video>
                             </div>
                             <div class="block-reveal">
                                 <div class="block"></div>
@@ -212,7 +221,10 @@
                                 <p class="primary-text featured-title featured-number-two">Ice Cream Shop</p>
                             </div>
                             <div class=" featured-gif-box">
-                                <img class="featured-img-gif" src="/img/Ice-cream-gif.gif" alt="Project Ice Cream Shop">
+                                <video muted loop autoplay playsinline poster class="featured-gif-box featured-img-gif">
+                                    <source src="/img/Ice-cream.webm" type="video/webm">
+                                    <source src="/img/Ice-cream.mp4" type="video/mp4">
+                                </video>
                             </div>
                             <div class="block-reveal">
                                 <div class="block"></div>

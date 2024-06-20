@@ -14,7 +14,7 @@
       perspective: 10rem;
   }
 
-  .project-img img {
+  .project-img img, .slider-video {
     width: 100%;
     /* height: calc(min(25rem, 100%)); */
     height: 25rem;
@@ -104,7 +104,7 @@
       perspective: 10rem;
   }
 
-  .project-img img {
+  .project-img img, .slider-video {
     width: 100%;
     height: 20rem;
   }
@@ -278,7 +278,7 @@
       perspective: 10rem;
   }
 
-  .project-img img {
+  .project-img img, .slider-video {
     width: 100%;
     height: 15rem;
   }
